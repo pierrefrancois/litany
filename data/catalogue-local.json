@@ -1,0 +1,313 @@
+{
+  "_doc": "local",
+  "saints": {
+    "marianne": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "marianne"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Marianne",
+          "qualite": "Vierge"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/5773/Sainte-Marianne.html"
+    },
+    "guillaume": {
+      "categorie": "laics",
+      "sexe": "M",
+      "anneeDeces": 1067,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "guillaume"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Guillaume",
+          "qualite": ""
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/8069/Saint-Guillaume.html"
+    },
+    "maurice": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 287,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "maurice"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Maurice",
+          "qualite": "et ses compagnons de la légion thébéenne"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1897/Saint-Maurice.html"
+    },
+    "alexandre": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 178,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "alexandre"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Alexandre",
+          "qualite": "Martyr à Lyon"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1016/Saint-Alexandre.html"
+    },
+    "benjamin": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "benjamin"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Benjamin",
+          "qualite": "Ermite de la laure des grottes de Kiev"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/8516/Saint-Benjamin.html"
+    },
+    "adrien": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 309,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "adrien"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Adrien",
+          "qualite": "Martyr à Césarée de Palestine"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/748/Saint-Adrien.html"
+    },
+    "isabelle-de-france": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 1270,
+      "type": "bienheureux",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "isabelle",
+        "isabelle de france"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Bienheureuse Isabelle de France",
+          "qualite": "Soeur de Saint Louis"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/684/Bienheureuse-Isabelle-de-France.html"
+    },
+    "serge": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 304,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "serge"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Serge",
+          "qualite": "Martyr à Césarée de Cappadoce"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/5880/Saint-Serge.html"
+    },
+    "charlotte": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 1794,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "charlotte"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Charlotte",
+          "qualite": "Et ses compagnes, Carmélites de Compiègne, martyres"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1522/Sainte-Charlotte.html"
+    },
+    "laurent-de-rome": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 258,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "laurent",
+        "laurent de rome"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Laurent de Rome",
+          "qualite": "Diacre et martyr à Rome"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1652/Saint-Laurent-de-Rome.html"
+    },
+    "arnaud": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1255,
+      "type": "bienheureux",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "arnaud"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Bienheureux Arnaud",
+          "qualite": "Abbé de Sainte-Justine de Padoue"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/604/Bienheureux-Arnaud.html"
+    },
+    "eve-de-dreux": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "eve",
+        "eve de dreux"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Ève de Dreux",
+          "qualite": ""
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/8259/Sainte-%C3%88ve-de-Dreux.html"
+    },
+    "dorothee": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "dorothee"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Dorothée",
+          "qualite": "Vierge et martyre à Césarée de Cappadoce"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/579/Sainte-Doroth%C3%A9e.html"
+    },
+    "caius": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 296,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "caius"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Caïus",
+          "qualite": "Pape (28e) de 283 à 296"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1017/Saint-Ca%C3%AFus.html"
+    },
+    "jeanne-francoise-de-chantal": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 1641,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "chantal",
+        "jeanne francoise de chantal"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Jeanne-Françoise de Chantal",
+          "qualite": "Fondatrice de la Visitation"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/249/Sainte-Jeanne-Fran%C3%A7oise-de-Chantal.html"
+    },
+    "etheldrede": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 679,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "etheldrede"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Etheldrede",
+          "qualite": "Abbesse, fondatrice d'Ely"
+        }
+      },
+      "source": "nominis",
+      "url": "https://nominis.cef.fr/contenus/saint/1373/Sainte-Etheldrede.html"
+    }
+  }
+}

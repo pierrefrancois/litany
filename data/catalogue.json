@@ -1,0 +1,1888 @@
+{
+  "_doc": "Catalogue local des saints. Source unique du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale.",
+  "categories": [
+    "marie",
+    "anges",
+    "patriarches_prophetes",
+    "apotres",
+    "martyrs",
+    "eveques_docteurs",
+    "pretres_religieux",
+    "laics"
+  ],
+  "baseParDefaut": "bapteme-enfants",
+  "bases": {
+    "bapteme-enfants": {
+      "nom": "Baptême des petits enfants",
+      "entrees": [
+        {
+          "saint": "marie"
+        },
+        {
+          "saint": "jean-baptiste"
+        },
+        {
+          "saint": "joseph",
+          "epingleFin": true
+        },
+        {
+          "invocation": "Saint Pierre et saint Paul",
+          "categorie": "apotres",
+          "sexe": "M",
+          "anneeDeces": 64,
+          "couvre": [
+            "pierre",
+            "paul"
+          ]
+        }
+      ]
+    },
+    "vigile-pascale": {
+      "nom": "Vigile pascale",
+      "entrees": [
+        {
+          "saint": "marie"
+        },
+        {
+          "saint": "michel"
+        },
+        {
+          "invocation": "Vous tous, saints anges de Dieu",
+          "categorie": "anges"
+        },
+        {
+          "saint": "jean-baptiste"
+        },
+        {
+          "saint": "joseph",
+          "epingleFin": true
+        },
+        {
+          "invocation": "Saint Pierre et saint Paul",
+          "categorie": "apotres",
+          "sexe": "M",
+          "anneeDeces": 64,
+          "couvre": [
+            "pierre",
+            "paul"
+          ]
+        },
+        {
+          "saint": "andre"
+        },
+        {
+          "saint": "jean"
+        },
+        {
+          "saint": "marie-madeleine"
+        },
+        {
+          "saint": "etienne"
+        },
+        {
+          "saint": "ignace-antioche"
+        },
+        {
+          "saint": "laurent"
+        },
+        {
+          "invocation": "Sainte Perpétue et sainte Félicité",
+          "categorie": "martyrs",
+          "sexe": "F",
+          "anneeDeces": 203,
+          "couvre": [
+            "perpetue",
+            "felicite"
+          ]
+        },
+        {
+          "saint": "agnes"
+        },
+        {
+          "saint": "gregoire-grand"
+        },
+        {
+          "saint": "augustin"
+        },
+        {
+          "saint": "athanase"
+        },
+        {
+          "saint": "basile"
+        },
+        {
+          "saint": "martin"
+        },
+        {
+          "saint": "benoit"
+        },
+        {
+          "invocation": "Saint François et saint Dominique",
+          "categorie": "pretres_religieux",
+          "sexe": "M",
+          "anneeDeces": 1221,
+          "couvre": [
+            "francois-assise",
+            "dominique"
+          ]
+        },
+        {
+          "saint": "ignace-loyola"
+        },
+        {
+          "saint": "francois-xavier"
+        },
+        {
+          "saint": "vianney"
+        },
+        {
+          "saint": "catherine-sienne"
+        },
+        {
+          "saint": "therese-avila"
+        }
+      ]
+    },
+    "complete": {
+      "nom": "Litanie complète",
+      "entrees": [
+        {
+          "saint": "marie"
+        },
+        {
+          "invocation": "Sainte Vierge des vierges",
+          "categorie": "marie"
+        },
+        {
+          "saint": "michel"
+        },
+        {
+          "saint": "gabriel"
+        },
+        {
+          "saint": "raphael"
+        },
+        {
+          "invocation": "Vous tous, saints anges de Dieu",
+          "categorie": "anges"
+        },
+        {
+          "saint": "abraham"
+        },
+        {
+          "saint": "moise"
+        },
+        {
+          "saint": "elie"
+        },
+        {
+          "saint": "jean-baptiste"
+        },
+        {
+          "saint": "joseph",
+          "epingleFin": true
+        },
+        {
+          "saint": "pierre"
+        },
+        {
+          "saint": "paul"
+        },
+        {
+          "saint": "andre"
+        },
+        {
+          "saint": "jacques-majeur"
+        },
+        {
+          "saint": "jean"
+        },
+        {
+          "saint": "thomas"
+        },
+        {
+          "saint": "jacques-mineur"
+        },
+        {
+          "saint": "philippe"
+        },
+        {
+          "saint": "barthelemy"
+        },
+        {
+          "saint": "matthieu"
+        },
+        {
+          "saint": "simon"
+        },
+        {
+          "saint": "jude"
+        },
+        {
+          "saint": "matthias"
+        },
+        {
+          "saint": "barnabe"
+        },
+        {
+          "saint": "luc"
+        },
+        {
+          "saint": "marc"
+        },
+        {
+          "saint": "marie-madeleine"
+        },
+        {
+          "saint": "etienne"
+        },
+        {
+          "saint": "ignace-antioche"
+        },
+        {
+          "saint": "polycarpe"
+        },
+        {
+          "saint": "corneille"
+        },
+        {
+          "saint": "cyprien"
+        },
+        {
+          "saint": "laurent"
+        },
+        {
+          "saint": "sebastien"
+        },
+        {
+          "saint": "perpetue"
+        },
+        {
+          "saint": "felicite"
+        },
+        {
+          "saint": "cecile"
+        },
+        {
+          "saint": "agathe"
+        },
+        {
+          "saint": "agnes"
+        },
+        {
+          "saint": "lucie"
+        },
+        {
+          "saint": "hilaire"
+        },
+        {
+          "saint": "athanase"
+        },
+        {
+          "saint": "basile"
+        },
+        {
+          "saint": "gregoire-naziance"
+        },
+        {
+          "saint": "martin"
+        },
+        {
+          "saint": "ambroise"
+        },
+        {
+          "saint": "jean-chrysostome"
+        },
+        {
+          "saint": "jerome"
+        },
+        {
+          "saint": "augustin"
+        },
+        {
+          "saint": "leon"
+        },
+        {
+          "saint": "gregoire-grand"
+        },
+        {
+          "saint": "thomas-aquin"
+        },
+        {
+          "saint": "francois-sales"
+        },
+        {
+          "saint": "catherine-sienne"
+        },
+        {
+          "saint": "therese-avila"
+        },
+        {
+          "saint": "antoine-ermite"
+        },
+        {
+          "saint": "benoit"
+        },
+        {
+          "saint": "bernard"
+        },
+        {
+          "saint": "dominique"
+        },
+        {
+          "saint": "francois-assise"
+        },
+        {
+          "saint": "ignace-loyola"
+        },
+        {
+          "saint": "francois-xavier"
+        },
+        {
+          "saint": "vianney"
+        },
+        {
+          "saint": "jean-bosco"
+        },
+        {
+          "saint": "therese-lisieux"
+        },
+        {
+          "saint": "anne"
+        },
+        {
+          "saint": "monique"
+        },
+        {
+          "saint": "helene"
+        },
+        {
+          "saint": "louis"
+        },
+        {
+          "saint": "elisabeth-hongrie"
+        },
+        {
+          "saint": "jeanne-arc"
+        }
+      ]
+    }
+  },
+  "saints": {
+    "marie": {
+      "categorie": "marie",
+      "sexe": "F",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": "01-01",
+      "region": null,
+      "prenoms": [
+        "marie",
+        "maria",
+        "mary",
+        "myriam"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Marie, Mère de Dieu",
+          "qualite": "Mère de Dieu"
+        }
+      }
+    },
+    "michel": {
+      "categorie": "anges",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": "09-29",
+      "region": null,
+      "prenoms": [
+        "michel",
+        "mickael",
+        "mikael",
+        "michael"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Michel",
+          "qualite": "archange"
+        }
+      }
+    },
+    "gabriel": {
+      "categorie": "anges",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": "09-29",
+      "region": null,
+      "prenoms": [
+        "gabriel"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Gabriel",
+          "qualite": "archange"
+        }
+      }
+    },
+    "raphael": {
+      "categorie": "anges",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": "09-29",
+      "region": null,
+      "prenoms": [
+        "raphael"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Raphaël",
+          "qualite": "archange"
+        }
+      }
+    },
+    "abraham": {
+      "categorie": "patriarches_prophetes",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "abraham"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Abraham",
+          "qualite": "patriarche"
+        }
+      }
+    },
+    "moise": {
+      "categorie": "patriarches_prophetes",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "moise"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Moïse",
+          "qualite": "prophète"
+        }
+      }
+    },
+    "elie": {
+      "categorie": "patriarches_prophetes",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": null,
+      "region": null,
+      "prenoms": [
+        "elie"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Élie",
+          "qualite": "prophète"
+        }
+      }
+    },
+    "jean-baptiste": {
+      "categorie": "patriarches_prophetes",
+      "sexe": "M",
+      "anneeDeces": 30,
+      "type": "saint",
+      "feteJour": "06-24",
+      "region": null,
+      "prenoms": [
+        "jean",
+        "jean-baptiste",
+        "jean baptiste"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean-Baptiste",
+          "qualite": "précurseur du Seigneur"
+        }
+      }
+    },
+    "joseph": {
+      "categorie": "patriarches_prophetes",
+      "sexe": "M",
+      "anneeDeces": null,
+      "type": "saint",
+      "feteJour": "03-19",
+      "region": null,
+      "prenoms": [
+        "joseph",
+        "jose"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Joseph",
+          "qualite": "époux de la Vierge Marie"
+        }
+      }
+    },
+    "pierre": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 64,
+      "type": "saint",
+      "feteJour": "06-29",
+      "region": null,
+      "prenoms": [
+        "pierre",
+        "peter",
+        "pierre"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Pierre",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "paul": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 67,
+      "type": "saint",
+      "feteJour": "06-29",
+      "region": null,
+      "prenoms": [
+        "paul",
+        "paolo"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Paul",
+          "qualite": "apôtre des nations"
+        }
+      }
+    },
+    "andre": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 60,
+      "type": "saint",
+      "feteJour": "11-30",
+      "region": null,
+      "prenoms": [
+        "andre"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint André",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "jacques-majeur": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 44,
+      "type": "saint",
+      "feteJour": "07-25",
+      "region": null,
+      "prenoms": [
+        "jacques",
+        "jacky"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jacques le Majeur",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "jean": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 100,
+      "type": "saint",
+      "feteJour": "12-27",
+      "region": null,
+      "prenoms": [
+        "jean"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean",
+          "qualite": "apôtre et évangéliste"
+        }
+      }
+    },
+    "thomas": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 72,
+      "type": "saint",
+      "feteJour": "07-03",
+      "region": null,
+      "prenoms": [
+        "thomas"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Thomas",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "jacques-mineur": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 62,
+      "type": "saint",
+      "feteJour": "05-03",
+      "region": null,
+      "prenoms": [
+        "jacques"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jacques le Mineur",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "philippe": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 80,
+      "type": "saint",
+      "feteJour": "05-03",
+      "region": null,
+      "prenoms": [
+        "philippe"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Philippe",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "barthelemy": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 71,
+      "type": "saint",
+      "feteJour": "08-24",
+      "region": null,
+      "prenoms": [
+        "barthelemy"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Barthélemy",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "matthieu": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 70,
+      "type": "saint",
+      "feteJour": "09-21",
+      "region": null,
+      "prenoms": [
+        "matthieu",
+        "mathieu"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Matthieu",
+          "qualite": "apôtre et évangéliste"
+        }
+      }
+    },
+    "simon": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 100,
+      "type": "saint",
+      "feteJour": "10-28",
+      "region": null,
+      "prenoms": [
+        "simon"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Simon",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "jude": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 80,
+      "type": "saint",
+      "feteJour": "10-28",
+      "region": null,
+      "prenoms": [
+        "jude",
+        "thaddee"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jude",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "matthias": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 80,
+      "type": "saint",
+      "feteJour": "05-14",
+      "region": null,
+      "prenoms": [
+        "matthias"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Matthias",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "barnabe": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 61,
+      "type": "saint",
+      "feteJour": "06-11",
+      "region": null,
+      "prenoms": [
+        "barnabe"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Barnabé",
+          "qualite": "apôtre"
+        }
+      }
+    },
+    "luc": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 84,
+      "type": "saint",
+      "feteJour": "10-18",
+      "region": null,
+      "prenoms": [
+        "luc",
+        "lucas"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Luc",
+          "qualite": "évangéliste"
+        }
+      }
+    },
+    "marc": {
+      "categorie": "apotres",
+      "sexe": "M",
+      "anneeDeces": 68,
+      "type": "saint",
+      "feteJour": "04-25",
+      "region": null,
+      "prenoms": [
+        "marc",
+        "marco"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Marc",
+          "qualite": "évangéliste"
+        }
+      }
+    },
+    "marie-madeleine": {
+      "categorie": "apotres",
+      "sexe": "F",
+      "anneeDeces": 70,
+      "type": "saint",
+      "feteJour": "07-22",
+      "region": null,
+      "prenoms": [
+        "madeleine",
+        "marie-madeleine",
+        "marie madeleine",
+        "magali"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Marie-Madeleine",
+          "qualite": "disciple du Seigneur"
+        }
+      }
+    },
+    "etienne": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 35,
+      "type": "saint",
+      "feteJour": "12-26",
+      "region": null,
+      "prenoms": [
+        "etienne",
+        "stephane",
+        "stephen"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Étienne",
+          "qualite": "premier martyr"
+        }
+      }
+    },
+    "clement-rome": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 101,
+      "type": "saint",
+      "feteJour": "11-23",
+      "region": null,
+      "prenoms": [
+        "clement"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Clément",
+          "qualite": "pape et martyr"
+        }
+      }
+    },
+    "ignace-antioche": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 107,
+      "type": "saint",
+      "feteJour": "10-17",
+      "region": null,
+      "prenoms": [
+        "ignace"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Ignace d'Antioche",
+          "qualite": "évêque et martyr"
+        }
+      }
+    },
+    "polycarpe": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 155,
+      "type": "saint",
+      "feteJour": "02-23",
+      "region": null,
+      "prenoms": [
+        "polycarpe"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Polycarpe",
+          "qualite": "évêque et martyr"
+        }
+      }
+    },
+    "blandine": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 177,
+      "type": "saint",
+      "feteJour": "06-02",
+      "region": "Lyon",
+      "prenoms": [
+        "blandine"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Blandine",
+          "qualite": "martyre de Lyon"
+        }
+      }
+    },
+    "perpetue": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 203,
+      "type": "saint",
+      "feteJour": "03-07",
+      "region": null,
+      "prenoms": [
+        "perpetue"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Perpétue",
+          "qualite": "martyre"
+        }
+      }
+    },
+    "felicite": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 203,
+      "type": "saint",
+      "feteJour": "03-07",
+      "region": null,
+      "prenoms": [
+        "felicite"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Félicité",
+          "qualite": "martyre"
+        }
+      }
+    },
+    "cecile": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 230,
+      "type": "saint",
+      "feteJour": "11-22",
+      "region": null,
+      "prenoms": [
+        "cecile"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Cécile",
+          "qualite": "vierge et martyre"
+        }
+      }
+    },
+    "corneille": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 253,
+      "type": "saint",
+      "feteJour": "09-16",
+      "region": null,
+      "prenoms": [
+        "corneille"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Corneille",
+          "qualite": "pape et martyr"
+        }
+      }
+    },
+    "agathe": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 251,
+      "type": "saint",
+      "feteJour": "02-05",
+      "region": null,
+      "prenoms": [
+        "agathe"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Agathe",
+          "qualite": "vierge et martyre"
+        }
+      }
+    },
+    "cyprien": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 258,
+      "type": "saint",
+      "feteJour": "09-16",
+      "region": null,
+      "prenoms": [
+        "cyprien"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Cyprien",
+          "qualite": "évêque et martyr"
+        }
+      }
+    },
+    "laurent": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 258,
+      "type": "saint",
+      "feteJour": "08-10",
+      "region": null,
+      "prenoms": [
+        "laurent",
+        "lorenzo"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Laurent",
+          "qualite": "diacre et martyr"
+        }
+      }
+    },
+    "come": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 287,
+      "type": "saint",
+      "feteJour": "09-26",
+      "region": null,
+      "prenoms": [
+        "come",
+        "cosme"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Côme",
+          "qualite": "martyr"
+        }
+      }
+    },
+    "damien": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 287,
+      "type": "saint",
+      "feteJour": "09-26",
+      "region": null,
+      "prenoms": [
+        "damien"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Damien",
+          "qualite": "martyr"
+        }
+      }
+    },
+    "sebastien": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 288,
+      "type": "saint",
+      "feteJour": "01-20",
+      "region": null,
+      "prenoms": [
+        "sebastien"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Sébastien",
+          "qualite": "martyr"
+        }
+      }
+    },
+    "georges": {
+      "categorie": "martyrs",
+      "sexe": "M",
+      "anneeDeces": 303,
+      "type": "saint",
+      "feteJour": "04-23",
+      "region": null,
+      "prenoms": [
+        "georges",
+        "georg"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Georges",
+          "qualite": "martyr"
+        }
+      }
+    },
+    "agnes": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 304,
+      "type": "saint",
+      "feteJour": "01-21",
+      "region": null,
+      "prenoms": [
+        "agnes",
+        "ines"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Agnès",
+          "qualite": "vierge et martyre"
+        }
+      }
+    },
+    "lucie": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 304,
+      "type": "saint",
+      "feteJour": "12-13",
+      "region": null,
+      "prenoms": [
+        "lucie",
+        "lucia",
+        "lucy"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Lucie",
+          "qualite": "vierge et martyre"
+        }
+      }
+    },
+    "marguerite": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 304,
+      "type": "saint",
+      "feteJour": "07-20",
+      "region": null,
+      "prenoms": [
+        "marguerite",
+        "margaux",
+        "margot"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Marguerite",
+          "qualite": "vierge et martyre"
+        }
+      }
+    },
+    "catherine-alexandrie": {
+      "categorie": "martyrs",
+      "sexe": "F",
+      "anneeDeces": 305,
+      "type": "saint",
+      "feteJour": "11-25",
+      "region": null,
+      "prenoms": [
+        "catherine",
+        "katia",
+        "karine"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Catherine d'Alexandrie",
+          "qualite": "vierge et martyre d'Alexandrie"
+        }
+      }
+    },
+    "nicolas": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 343,
+      "type": "saint",
+      "feteJour": "12-06",
+      "region": null,
+      "prenoms": [
+        "nicolas",
+        "colin"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Nicolas",
+          "qualite": "évêque de Myre"
+        }
+      }
+    },
+    "hilaire": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 367,
+      "type": "saint",
+      "feteJour": "01-13",
+      "region": null,
+      "prenoms": [
+        "hilaire"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Hilaire",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "athanase": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 373,
+      "type": "saint",
+      "feteJour": "05-02",
+      "region": null,
+      "prenoms": [
+        "athanase"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Athanase",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "basile": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 379,
+      "type": "saint",
+      "feteJour": "01-02",
+      "region": null,
+      "prenoms": [
+        "basile"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Basile le Grand",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "gregoire-naziance": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 390,
+      "type": "saint",
+      "feteJour": "01-02",
+      "region": null,
+      "prenoms": [
+        "gregoire"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Grégoire de Nazianze",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "martin": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 397,
+      "type": "saint",
+      "feteJour": "11-11",
+      "region": "Tours",
+      "prenoms": [
+        "martin"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Martin",
+          "qualite": "évêque de Tours"
+        }
+      }
+    },
+    "ambroise": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 397,
+      "type": "saint",
+      "feteJour": "12-07",
+      "region": null,
+      "prenoms": [
+        "ambroise"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Ambroise",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "jean-chrysostome": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 407,
+      "type": "saint",
+      "feteJour": "09-13",
+      "region": null,
+      "prenoms": [
+        "jean"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean Chrysostome",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "jerome": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 420,
+      "type": "saint",
+      "feteJour": "09-30",
+      "region": null,
+      "prenoms": [
+        "jerome"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jérôme",
+          "qualite": "prêtre et docteur"
+        }
+      }
+    },
+    "augustin": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 430,
+      "type": "saint",
+      "feteJour": "08-28",
+      "region": null,
+      "prenoms": [
+        "augustin"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Augustin",
+          "qualite": "évêque d'Hippone, docteur"
+        }
+      }
+    },
+    "leon": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 461,
+      "type": "saint",
+      "feteJour": "11-10",
+      "region": null,
+      "prenoms": [
+        "leon"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Léon le Grand",
+          "qualite": "pape et docteur"
+        }
+      }
+    },
+    "gregoire-grand": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 604,
+      "type": "saint",
+      "feteJour": "09-03",
+      "region": null,
+      "prenoms": [
+        "gregoire"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Grégoire le Grand",
+          "qualite": "pape et docteur"
+        }
+      }
+    },
+    "thomas-aquin": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 1274,
+      "type": "saint",
+      "feteJour": "01-28",
+      "region": null,
+      "prenoms": [
+        "thomas"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Thomas d'Aquin",
+          "qualite": "prêtre et docteur"
+        }
+      }
+    },
+    "catherine-sienne": {
+      "categorie": "eveques_docteurs",
+      "sexe": "F",
+      "anneeDeces": 1380,
+      "type": "saint",
+      "feteJour": "04-29",
+      "region": "Sienne",
+      "prenoms": [
+        "catherine"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Catherine de Sienne",
+          "qualite": "vierge et docteur"
+        }
+      }
+    },
+    "therese-avila": {
+      "categorie": "eveques_docteurs",
+      "sexe": "F",
+      "anneeDeces": 1582,
+      "type": "saint",
+      "feteJour": "10-15",
+      "region": "Avila",
+      "prenoms": [
+        "therese",
+        "theresa"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Thérèse d'Avila",
+          "qualite": "vierge et docteur"
+        }
+      }
+    },
+    "francois-sales": {
+      "categorie": "eveques_docteurs",
+      "sexe": "M",
+      "anneeDeces": 1622,
+      "type": "saint",
+      "feteJour": "01-24",
+      "region": null,
+      "prenoms": [
+        "francois"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint François de Sales",
+          "qualite": "évêque et docteur"
+        }
+      }
+    },
+    "antoine-ermite": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 356,
+      "type": "saint",
+      "feteJour": "01-17",
+      "region": null,
+      "prenoms": [
+        "antoine"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Antoine le Grand",
+          "qualite": "abbé, père des moines"
+        }
+      }
+    },
+    "benoit": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 547,
+      "type": "saint",
+      "feteJour": "07-11",
+      "region": null,
+      "prenoms": [
+        "benoit",
+        "ben"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Benoît",
+          "qualite": "abbé, patriarche des moines"
+        }
+      }
+    },
+    "bernard": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1153,
+      "type": "saint",
+      "feteJour": "08-20",
+      "region": null,
+      "prenoms": [
+        "bernard"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Bernard de Clairvaux",
+          "qualite": "abbé et docteur"
+        }
+      }
+    },
+    "dominique": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1221,
+      "type": "saint",
+      "feteJour": "08-08",
+      "region": null,
+      "prenoms": [
+        "dominique",
+        "dominic"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Dominique",
+          "qualite": "fondateur des Prêcheurs"
+        }
+      }
+    },
+    "francois-assise": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1226,
+      "type": "saint",
+      "feteJour": "10-04",
+      "region": "Assise",
+      "prenoms": [
+        "francois"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint François d'Assise",
+          "qualite": "fondateur des Frères mineurs"
+        }
+      }
+    },
+    "antoine-padoue": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1231,
+      "type": "saint",
+      "feteJour": "06-13",
+      "region": "Padoue",
+      "prenoms": [
+        "antoine"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Antoine de Padoue",
+          "qualite": "prêtre et docteur"
+        }
+      }
+    },
+    "claire": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 1253,
+      "type": "saint",
+      "feteJour": "08-11",
+      "region": "Assise",
+      "prenoms": [
+        "claire",
+        "clara"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Claire d'Assise",
+          "qualite": "vierge, fondatrice"
+        }
+      }
+    },
+    "francois-xavier": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1552,
+      "type": "saint",
+      "feteJour": "12-03",
+      "region": null,
+      "prenoms": [
+        "francois",
+        "xavier"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint François Xavier",
+          "qualite": "prêtre, missionnaire"
+        }
+      }
+    },
+    "ignace-loyola": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1556,
+      "type": "saint",
+      "feteJour": "07-31",
+      "region": null,
+      "prenoms": [
+        "ignace"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Ignace de Loyola",
+          "qualite": "fondateur des Jésuites"
+        }
+      }
+    },
+    "camille": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1614,
+      "type": "saint",
+      "feteJour": "07-14",
+      "region": null,
+      "prenoms": [
+        "camille"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Camille de Lellis",
+          "qualite": "prêtre, fondateur"
+        }
+      }
+    },
+    "vincent-paul": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1660,
+      "type": "saint",
+      "feteJour": "09-27",
+      "region": null,
+      "prenoms": [
+        "vincent"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Vincent de Paul",
+          "qualite": "prêtre, fondateur"
+        }
+      }
+    },
+    "jb-de-la-salle": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1719,
+      "type": "saint",
+      "feteJour": "04-07",
+      "region": null,
+      "prenoms": [
+        "jean",
+        "jean-baptiste"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean-Baptiste de la Salle",
+          "qualite": "prêtre, fondateur des écoles"
+        }
+      }
+    },
+    "vianney": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1859,
+      "type": "saint",
+      "feteJour": "08-04",
+      "region": "Ars",
+      "prenoms": [
+        "jean",
+        "jean-marie"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean-Marie Vianney",
+          "qualite": "prêtre, curé d'Ars"
+        }
+      }
+    },
+    "bernadette": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 1879,
+      "type": "saint",
+      "feteJour": "04-16",
+      "region": "Lourdes",
+      "prenoms": [
+        "bernadette"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Bernadette Soubirous",
+          "qualite": "vierge, voyante de Lourdes"
+        }
+      }
+    },
+    "jean-bosco": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1888,
+      "type": "saint",
+      "feteJour": "01-31",
+      "region": null,
+      "prenoms": [
+        "jean",
+        "bosco"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Jean Bosco",
+          "qualite": "prêtre, fondateur des Salésiens"
+        }
+      }
+    },
+    "therese-lisieux": {
+      "categorie": "pretres_religieux",
+      "sexe": "F",
+      "anneeDeces": 1897,
+      "type": "saint",
+      "feteJour": "10-01",
+      "region": "Lisieux",
+      "prenoms": [
+        "therese"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Thérèse de l'Enfant-Jésus",
+          "qualite": "vierge et docteur"
+        }
+      }
+    },
+    "charles-foucauld": {
+      "categorie": "pretres_religieux",
+      "sexe": "M",
+      "anneeDeces": 1916,
+      "type": "saint",
+      "feteJour": "12-01",
+      "region": "Sahara",
+      "prenoms": [
+        "charles"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Charles de Foucauld",
+          "qualite": "prêtre, ermite au Sahara"
+        }
+      }
+    },
+    "anne": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 12,
+      "type": "saint",
+      "feteJour": "07-26",
+      "region": null,
+      "prenoms": [
+        "anne",
+        "anna",
+        "annie",
+        "nancy"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Anne",
+          "qualite": "mère de la Vierge Marie"
+        }
+      }
+    },
+    "helene": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 330,
+      "type": "saint",
+      "feteJour": "08-18",
+      "region": null,
+      "prenoms": [
+        "helene",
+        "helena"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Hélène",
+          "qualite": "impératrice"
+        }
+      }
+    },
+    "monique": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 387,
+      "type": "saint",
+      "feteJour": "08-27",
+      "region": null,
+      "prenoms": [
+        "monique"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Monique",
+          "qualite": "mère de saint Augustin"
+        }
+      }
+    },
+    "louis": {
+      "categorie": "laics",
+      "sexe": "M",
+      "anneeDeces": 1270,
+      "type": "saint",
+      "feteJour": "08-25",
+      "region": "France",
+      "prenoms": [
+        "louis",
+        "ludovic"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Saint Louis",
+          "qualite": "roi de France"
+        }
+      }
+    },
+    "elisabeth-hongrie": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 1231,
+      "type": "saint",
+      "feteJour": "11-17",
+      "region": "Hongrie",
+      "prenoms": [
+        "elisabeth",
+        "betty",
+        "isabelle",
+        "isabel",
+        "babeth"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Élisabeth de Hongrie",
+          "qualite": "mère de famille, tertiaire"
+        }
+      }
+    },
+    "elisabeth-portugal": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 1336,
+      "type": "saint",
+      "feteJour": "07-04",
+      "region": "Portugal",
+      "prenoms": [
+        "elisabeth",
+        "isabelle",
+        "isabel"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Élisabeth de Portugal",
+          "qualite": "reine de Portugal"
+        }
+      }
+    },
+    "jeanne-arc": {
+      "categorie": "laics",
+      "sexe": "F",
+      "anneeDeces": 1431,
+      "type": "saint",
+      "feteJour": "05-30",
+      "region": "France",
+      "prenoms": [
+        "jeanne",
+        "jane"
+      ],
+      "i18n": {
+        "fr": {
+          "nom": "Sainte Jeanne d'Arc",
+          "qualite": "vierge, patronne de la France"
+        }
+      }
+    }
+  }
+}

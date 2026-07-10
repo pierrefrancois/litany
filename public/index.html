@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Litanie des saints — préparation d'un baptême</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Litanie des saints</h1>
+    <p class="sous-titre">Choisissez une litanie de départ, puis ajoutez les saints patrons un à un : ils s'insèrent au bon rang.</p>
+  </header>
+
+  <main>
+    <section class="panneau" id="ajout">
+      <h2>Ajouter un saint patron</h2>
+      <p class="aide">Tapez un prénom (baptisé, parents, parrain, marraine…). En cas d'homonymes, choisissez le bon saint.</p>
+      <input type="text" id="recherche" autocomplete="off" placeholder="Élisabeth, Jean, Thomas, Côme…" />
+      <ul id="candidats" class="candidats" hidden></ul>
+      <div id="ajoutes" class="puces"></div>
+    </section>
+
+    <section class="panneau" id="resultat">
+      <div class="barre">
+        <h2>Litanie composée</h2>
+        <div class="boutons">
+          <label class="case">Départ&nbsp;: <select id="modele"></select></label>
+          <label class="case"><input type="checkbox" id="bxFin" /> Bienheureux à la fin</label>
+          <label class="case"><input type="checkbox" id="titres" /> Intertitres</label>
+          <button id="copier">Copier</button>
+          <button id="imprimer">Imprimer</button>
+        </div>
+      </div>
+      <div id="litanie" class="litanie"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>La préséance des saints et bienheureux invoqués dans les litanies est déterminé par l'usage de l'Église. Ce programme en tient compte.</p>
+  </footer>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

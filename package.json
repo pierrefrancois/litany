@@ -1,0 +1,11 @@
+{
+  "name": "litanie-des-saints",
+  "version": "0.1.0",
+  "description": "Préparer le texte de la litanie des saints pour un baptême, en insérant les saints patrons au bon rang de préséance.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
