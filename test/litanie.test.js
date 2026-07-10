@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { construireLitanie, normaliser } from '../src/litanie.js';
+import { construireLitanie, normaliser, appliquerGroupes } from '../src/litanie.js';
 import { comparerPreseance } from '../src/precedence.js';
 import { entreesBase, infoSaint } from '../src/catalogue.js';
 
@@ -99,4 +99,79 @@ test('deux Élisabeth ajoutées s\'ordonnent par date de mort', () => {
 test('normaliser enlève accents, casse et préfixe Saint', () => {
   assert.equal(normaliser('Saint Augustin'), 'augustin');
   assert.equal(normaliser('Côme'), 'come');
+});
+
+test('regroupement inactif par défaut : Côme et Damien restent deux invocations', () => {
+  const { entrees } = ajouter('come', 'damien');
+  assert.ok(pos(entrees, 'come') >= 0, 'Côme reste une entrée individuelle');
+  assert.ok(pos(entrees, 'damien') >= 0, 'Damien reste une entrée individuelle');
+  assert.ok(
+    !entrees.some((e) => e.invocation === 'Saints Côme et Damien'),
+    'aucune invocation jointe sans grouper',
+  );
+});
+
+test('regroupement actif : Côme et Damien fusionnent en une invocation jointe', () => {
+  const { entrees } = construireLitanie(
+    BASE,
+    ['come', 'damien'].map((id) => infoSaint(CAT, id)),
+    { grouper: true, groupes: CAT.groupes },
+  );
+  const jointes = entrees.filter((e) => e.invocation === 'Saints Côme et Damien');
+  assert.equal(jointes.length, 1, 'une seule invocation jointe');
+  const jointe = jointes[0];
+  assert.ok(jointe.couvre.includes('come') && jointe.couvre.includes('damien'), 'couvre les deux membres');
+  assert.equal(jointe.groupe, true, "l'entrée est marquée comme groupe");
+  assert.equal(pos(entrees, 'come'), -1, 'plus de Côme individuel');
+  assert.equal(pos(entrees, 'damien'), -1, 'plus de Damien individuel');
+});
+
+test('on ne regroupe que si les DEUX membres sont présents', () => {
+  const { entrees } = construireLitanie(
+    BASE,
+    ['come'].map((id) => infoSaint(CAT, id)),
+    { grouper: true, groupes: CAT.groupes },
+  );
+  assert.ok(pos(entrees, 'come') >= 0, 'Côme reste une entrée individuelle');
+  assert.ok(
+    !entrees.some((e) => e.invocation === 'Saints Côme et Damien'),
+    'pas de regroupement avec un seul membre',
+  );
+});
+
+test("l'invocation jointe garde le bon rang de préséance", () => {
+  const { entrees } = construireLitanie(
+    BASE,
+    ['come', 'damien', 'sebastien'].map((id) => infoSaint(CAT, id)),
+    { grouper: true, groupes: CAT.groupes },
+  );
+  const iJointe = entrees.findIndex((e) => e.invocation === 'Saints Côme et Damien');
+  const iSebastien = pos(entrees, 'sebastien');
+  assert.ok(iJointe >= 0, "l'entrée jointe existe");
+  assert.ok(iJointe < iSebastien, 'Côme et Damien †287 avant Sébastien †288');
+});
+
+test("le regroupement s'applique aussi aux membres venant de la base", () => {
+  const { entrees } = construireLitanie(
+    entreesBase(CAT, 'complete'),
+    [],
+    { grouper: true, groupes: CAT.groupes },
+  );
+  assert.ok(
+    entrees.some((e) => e.invocation === 'Saintes Perpétue et Félicité'),
+    "l'invocation jointe apparaît",
+  );
+  assert.equal(pos(entrees, 'perpetue'), -1, 'plus de Perpétue individuelle');
+  assert.equal(pos(entrees, 'felicite'), -1, 'plus de Félicité individuelle');
+});
+
+test("l'entrée jointe est marquée insérée si un membre l'était", () => {
+  const { entrees } = construireLitanie(
+    BASE,
+    ['come', 'damien'].map((id) => infoSaint(CAT, id)),
+    { grouper: true, groupes: CAT.groupes },
+  );
+  const jointe = entrees.find((e) => e.invocation === 'Saints Côme et Damien');
+  assert.ok(jointe, "l'entrée jointe existe");
+  assert.equal(jointe.insere, true, "l'entrée jointe hérite du marquage inséré");
 });

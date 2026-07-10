@@ -56,6 +56,16 @@ Principe clé : **les champs de préséance (`categorie`, `sexe`, `anneeDeces`, 
 
 Autre principe : la **litanie de base n'est jamais re-triée** — elle reste le texte du rituel. On ne fait qu'**insérer** les patrons choisis au bon rang : à l'intérieur d'une catégorie déjà présente (par date de mort), ou, si la catégorie est absente de la litanie courte, à sa place selon le rang des catégories. Joseph reste épinglé en fin des prophètes (`epingleFin`) et « Saint Pierre et saint Paul » couvre les deux apôtres pour la déduplication (`couvre`).
 
+**Regrouper certains saints** (case optionnelle, décochée par défaut) : l'usage
+de l'Église associe traditionnellement certains saints en une seule invocation
+(Côme et Damien, Perpétue et Félicité, Corneille et Cyprien…). Quand la case est
+cochée et que **tous** les membres d'un groupe sont présents dans la litanie —
+qu'ils viennent de la base de départ ou d'un ajout — leurs invocations
+individuelles sont remplacées par l'invocation jointe, placée au rang du membre le
+mieux placé. Les groupes sont déclarés dans `data/catalogue.json` (champ
+`groupes` : `{ cle, membres, i18n }`), et le regroupement réutilise le même champ
+`couvre` que les paires figées de la base.
+
 ## Enrichir le catalogue
 
 ### Depuis la page web (recommandé)

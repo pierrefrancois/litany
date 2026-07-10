@@ -29,6 +29,12 @@ function identite(saint) {
 // Construit la litanie complète à partir de la liste de base et d'une liste de
 // patrons à insérer. Ne mute pas les entrées d'origine.
 //
+// Options :
+//   - opts.grouper (booléen, défaut false) : active l'étape de regroupement des
+//     saints en invocations jointes (cf. appliquerGroupes).
+//   - opts.groupes (tableau, défaut []) : définition des groupes à appliquer.
+//   - opts.langue (chaîne, défaut 'fr') : langue de l'invocation jointe.
+//
 // Retourne { entrees, doublons, ajouts } :
 //   - entrees : la litanie ordonnée (chaque élément a un champ `insere:boolean`)
 //   - doublons : patrons ignorés car déjà présents
@@ -58,7 +64,72 @@ export function construireLitanie(base, patrons = [], opts = {}) {
     ajouts.push(patron);
   }
 
-  return { entrees, doublons, ajouts };
+  // Étape optionnelle de regroupement : après avoir composé la litanie, on peut
+  // fusionner certains ensembles de saints en une seule invocation jointe. On ne
+  // touche à `entrees` que si l'option est explicitement active et qu'au moins
+  // un groupe est défini ; la signature de retour reste inchangée.
+  let entreesFinales = entrees;
+  if (opts.grouper && opts.groupes && opts.groupes.length > 0) {
+    entreesFinales = appliquerGroupes(entrees, opts.groupes, opts);
+  }
+
+  return { entrees: entreesFinales, doublons, ajouts };
+}
+
+// Regroupe des saints en une invocation jointe si TOUS les membres du groupe
+// sont présents ; l'entrée jointe prend le rang du membre le mieux placé (le
+// plus petit index) et couvre (via `couvre`) tous ses membres.
+//
+// Fonction pure : ne mute pas le tableau reçu, elle travaille sur une copie et
+// la renvoie. Les groupes sont appliqués séquentiellement (le résultat d'un
+// groupe sert d'entrée au suivant). Chaque groupe a la forme
+// { cle, membres: [saintId...], i18n: { fr: { invocation } } }.
+export function appliquerGroupes(entrees, groupes, opts = {}) {
+  const langue = opts.langue || 'fr';
+  let sortie = [...entrees];
+
+  for (const groupe of groupes) {
+    const idsMembres = new Set(groupe.membres);
+    // On n'agit que si CHAQUE membre du groupe a une entrée correspondante.
+    const trouves = groupe.membres.filter((m) =>
+      sortie.some((e) => identite(e) === m),
+    );
+    if (trouves.length !== groupe.membres.length) continue; // pas tous présents
+
+    // `premier` (l'entrée la mieux placée d'un membre) sert de gabarit de
+    // préséance : on hérite de sa catégorie/sexe/année pour le tri.
+    const premier = sortie.find((e) => idsMembres.has(identite(e)));
+    // L'entrée jointe est marquée « insérée » dès qu'un seul membre l'était.
+    const insere = sortie.some(
+      (e) => idsMembres.has(identite(e)) && e.insere,
+    );
+    const jointe = {
+      invocation: (groupe.i18n[langue] || groupe.i18n.fr).invocation,
+      categorie: premier.categorie,
+      sexe: premier.sexe,
+      anneeDeces: premier.anneeDeces,
+      type: 'saint',
+      couvre: [...groupe.membres],
+      insere,
+      groupe: true,
+    };
+
+    // On reconstruit le tableau : la PREMIÈRE occurrence d'un membre est
+    // remplacée par l'entrée jointe (elle prend donc le rang du mieux placé),
+    // les autres membres sont simplement omis. Ainsi pas de calcul d'index
+    // fragile ni de décalage à gérer.
+    let posee = false;
+    sortie = sortie.flatMap((e) => {
+      if (!idsMembres.has(identite(e))) return [e];
+      if (!posee) {
+        posee = true;
+        return [jointe];
+      }
+      return [];
+    });
+  }
+
+  return sortie;
 }
 
 // Insère un patron dans le tableau `entrees` (muté) à la bonne position, selon

@@ -20,6 +20,7 @@ function sauvegarderEtat() {
       cleBase,
       ids: choisis.map((c) => c.saintId).filter(Boolean),
       bxFin: $('#bxFin').checked,
+      grouper: $('#grouper').checked,
       titres: $('#titres').checked,
     }));
   } catch { /* localStorage indisponible : on continue sans persistance */ }
@@ -50,6 +51,7 @@ async function init() {
   // Restaure les options d'affichage et les saints ajoutés (encore au catalogue).
   if (etat) {
     $('#bxFin').checked = !!etat.bxFin;
+    $('#grouper').checked = !!etat.grouper;
     $('#titres').checked = !!etat.titres;
     if (Array.isArray(etat.ids)) {
       for (const id of etat.ids) {
@@ -293,7 +295,7 @@ function retirer(saintId) {
 
 // Options d'ordre et d'affichage tirées des cases à cocher.
 function options() {
-  return { bienheureuxALaFin: $('#bxFin').checked };
+  return { bienheureuxALaFin: $('#bxFin').checked, grouper: $('#grouper').checked, groupes: catalogue.groupes || [], langue: LANGUE };
 }
 // Cocher « bienheureux à la fin » supprime les intertitres (à la demande).
 function titresVisibles() {
@@ -366,6 +368,7 @@ document.addEventListener('click', (e) => {
   if (!e.composedPath().some((n) => n.id === 'ajout')) $('#candidats').hidden = true;
 });
 $('#titres').addEventListener('change', recomposer);
+$('#grouper').addEventListener('change', recomposer);
 $('#bxFin').addEventListener('change', () => {
   $('#titres').disabled = $('#bxFin').checked; // « à la fin » force l'absence d'intertitres
   recomposer();

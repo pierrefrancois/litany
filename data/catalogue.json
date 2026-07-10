@@ -1,5 +1,5 @@
 {
-  "_doc": "Catalogue local des saints. Source unique du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale.",
+  "_doc": "Catalogue local des saints. Source unique du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale. groupes = paires canoniques fusionnables en une invocation jointe quand tous leurs membres sont présents (option « regrouper »).",
   "categories": [
     "marie",
     "anges",
@@ -11,6 +11,12 @@
     "laics"
   ],
   "baseParDefaut": "bapteme-enfants",
+  "groupes": [
+    { "cle": "perpetue-felicite", "membres": ["perpetue", "felicite"], "i18n": { "fr": { "invocation": "Saintes Perpétue et Félicité" } } },
+    { "cle": "corneille-cyprien", "membres": ["corneille", "cyprien"], "i18n": { "fr": { "invocation": "Saints Corneille et Cyprien" } } },
+    { "cle": "come-damien", "membres": ["come", "damien"], "i18n": { "fr": { "invocation": "Saints Côme et Damien" } } },
+    { "cle": "jean-jacques", "membres": ["jean", "jacques-majeur"], "i18n": { "fr": { "invocation": "Saint Jean et saint Jacques" } } }
+  ],
   "bases": {
     "bapteme-enfants": {
       "nom": "Baptême des petits enfants",
