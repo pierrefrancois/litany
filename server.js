@@ -74,7 +74,9 @@ const server = createServer(async (req, res) => {
       const candidats = r.candidats.filter((c) => c.type === 'saint' || c.type === 'bienheureux');
       return json(res, 200, { prenom, urlFiche: r.urlFiche, candidats });
     } catch (e) {
-      return json(res, 502, { erreur: `nominis injoignable : ${e.message}` });
+      // Détail technique en log serveur ; message clair (non technique) côté page.
+      console.error(`nominis (« ${prenom} ») :`, e);
+      return json(res, 502, { erreur: 'Nominis est momentanément indisponible. Réessayez dans quelques instants.' });
     }
   }
 

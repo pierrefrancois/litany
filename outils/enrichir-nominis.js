@@ -22,6 +22,12 @@ function sansAccents(s) {
 function normaliser(s) {
   return sansAccents(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
+// Décodage tolérant d'un slug d'URL : certains slugs de nominis contiennent un
+// « % » mal formé, sur lequel decodeURIComponent lèverait « URI malformed » et
+// ferait échouer toute la recherche. On retombe alors sur la forme brute.
+function decoderSlug(s) {
+  try { return decodeURIComponent(s); } catch { return s; }
+}
 function decode(s) {
   return (s || '')
     .replace(/&nbsp;/g, ' ')
@@ -74,7 +80,7 @@ export function parserFichePrenom(html) {
   let m;
   while ((m = reAnchor.exec(html)) !== null) {
     const url = m[1].startsWith('http') ? m[1] : BASE + m[1];
-    const slug = decodeURIComponent(m[2]);
+    const slug = decoderSlug(m[2]);
     const inner = m[3];
     const h5 = inner.match(/<h5[^>]*>([\s\S]*?)<\/h5>/i);
     const p = inner.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
@@ -106,7 +112,7 @@ export function trouverUrlPrenom(html, prenom) {
   const re = /\/contenus\/prenom\/\d+\/([^"'./]+)\.html/gi;
   let m;
   while ((m = re.exec(html)) !== null) {
-    if (normaliser(decodeURIComponent(m[1])) === cible) {
+    if (normaliser(decoderSlug(m[1])) === cible) {
       return BASE + m[0];
     }
   }
