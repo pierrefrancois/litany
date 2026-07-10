@@ -13,6 +13,18 @@
   </header>
 
   <main>
+    <section class="panneau" id="parametres">
+      <h2>Paramètres</h2>
+      <label class="champ-type">Type de litanie
+        <select id="modele"></select>
+      </label>
+      <div class="reglages">
+        <label class="reglage"><input type="checkbox" id="bxFin" /> Bienheureux à la fin</label>
+        <label class="reglage"><input type="checkbox" id="grouper" /> Regrouper certains saints</label>
+        <label class="reglage"><input type="checkbox" id="titres" /> Intertitres</label>
+      </div>
+    </section>
+
     <section class="panneau" id="ajout">
       <h2>Ajouter un saint patron</h2>
       <p class="aide">Tapez un prénom (baptisé, parents, parrain, marraine…). En cas d'homonymes, choisissez le bon saint.</p>
@@ -26,10 +38,6 @@
       <div class="barre">
         <h2>Litanie composée</h2>
         <div class="boutons">
-          <label class="case">Départ&nbsp;: <select id="modele"></select></label>
-          <label class="case"><input type="checkbox" id="bxFin" /> Bienheureux à la fin</label>
-          <label class="case"><input type="checkbox" id="grouper" /> Regrouper certains saints</label>
-          <label class="case"><input type="checkbox" id="titres" /> Intertitres</label>
           <button id="copier">Copier</button>
           <button id="imprimer">Imprimer</button>
         </div>
@@ -39,7 +47,7 @@
   </main>
 
   <footer>
-    <p>La préséance des saints et bienheureux invoqués dans les litanies est déterminé par l'usage de l'Église. Ce programme en tient compte.</p>
+    <p>La préséance des saints et bienheureux invoqués dans les litanies est déterminé par l’usage de l’Église. Ce programme en tient compte.</p>
   </footer>
 
   <script type="module" src="/app.js"></script>

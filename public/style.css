@@ -4,6 +4,8 @@
   --encre: #2c2a26;
   --insere: #1b6b3a;
   --bordure: #e3ddcd;
+  --bordeaux: #6e1f2a;
+  --bordeaux-fonce: #591821;
 }
 * { box-sizing: border-box; }
 body {
@@ -20,6 +22,13 @@ h1 { margin: .3rem 0; color: var(--or); font-size: 2rem; letter-spacing: .02em; 
 .panneau { background: #fff; border: 1px solid var(--bordure); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1.1rem 0; }
 h2 { margin-top: 0; color: var(--or); font-size: 1.25rem; }
 .aide { color: #6b665a; font-size: .92rem; margin: .2rem 0 .6rem; }
+
+/* Paramètres (panneau de réglages en haut de page) */
+.champ-type { display: flex; align-items: center; gap: .6rem; font-size: .95rem; color: #4a463d; margin-bottom: .8rem; }
+.champ-type select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--bordure); border-radius: 6px; background: #fff; }
+.reglages { display: flex; flex-direction: column; gap: .5rem; }
+.reglage { display: flex; align-items: center; gap: .5rem; font-size: .95rem; color: #4a463d; cursor: pointer; }
+.reglage input { margin: 0; }
 
 /* Recherche + candidats */
 #recherche { width: 100%; font: inherit; padding: .6rem .7rem; border: 1px solid var(--bordure); border-radius: 6px; }
@@ -72,9 +81,10 @@ h2 { margin-top: 0; color: var(--or); font-size: 1.25rem; }
 /* Barre résultat */
 .barre { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .boutons { display: flex; gap: .75rem; align-items: center; }
-.case { font-size: .9rem; color: #6b665a; }
 button { font: inherit; cursor: pointer; background: var(--or); color: #fff; border: none; padding: .45rem 1rem; border-radius: 6px; }
 button:hover { background: #715a18; }
+#copier, #imprimer { background: var(--bordeaux); }
+#copier:hover, #imprimer:hover { background: var(--bordeaux-fonce); }
 
 /* Litanie */
 .litanie h3 { color: var(--or); font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--bordure); padding-bottom: .2rem; margin: 1.2rem 0 .4rem; }
@@ -85,7 +95,7 @@ button:hover { background: #715a18; }
 footer { color: #6b665a; font-size: .82rem; text-align: center; border-top: 1px solid var(--bordure); }
 
 @media print {
-  header .sous-titre, #ajout, footer, .barre .boutons { display: none; }
+  header .sous-titre, #parametres, #ajout, footer, .barre .boutons { display: none; }
   .panneau { border: none; margin: 0; }
   .invocation.inseree { color: #000; font-weight: normal; }
   .invocation.inseree::after { content: ""; }
