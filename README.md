@@ -26,9 +26,9 @@ Ordre fixé par l'*Ordo cantus Missae* (1972), repris dans le Rituel romain. Deu
 1. **La catégorie**, dans cet ordre :
    `Marie → anges → patriarches/prophètes → apôtres → martyrs → évêques & docteurs → prêtres & religieux → laïcs`
    (Joseph clôt toujours les prophètes ; Pierre & Paul ouvrent toujours les apôtres.)
-2. **À l'intérieur d'une catégorie** : les **hommes d'abord** (ordre chronologique de **décès**, le *dies natalis*), **puis les femmes** (même ordre). À catégorie et sexe égaux, un **saint précède un bienheureux**.
+2. **À l'intérieur d'une catégorie** : les **hommes d'abord** (ordre chronologique du **dies natalis**), **puis les femmes** (même ordre). À catégorie et sexe égaux, un **saint précède un bienheureux**.
 
-> Le critère de départage est la **date de mort**, ni la naissance ni la canonisation.
+> Le critère de départage est le **dies natalis**, ni la naissance ni la canonisation.
 > Exception non automatisée : un fondateur peut précéder son disciple (Ignace de Loyola †1556 avant François Xavier †1552) ; elle est encodée « en dur » dans l'ordre de la litanie de base.
 
 Détails : ce ne sont pas des « papes » qui forment une catégorie — un pape se range selon ce qu'il fut (Corneille chez les martyrs, Léon chez les évêques-docteurs). Et les anges viennent **avant** Jean-Baptiste et Joseph.
@@ -52,9 +52,9 @@ outils/enrichir-nominis.js Recherche nominis (réutilisée par le serveur et en 
 test/                      Tests (node --test)
 ```
 
-Principe clé : **les champs de préséance (`categorie`, `sexe`, `anneeDeces`, `type`) sont indépendants de la langue.** Seul l'affichage (`nom`, `qualite`) est traduisible (`i18n`). Le site est donc prêt pour le multilingue (v1 : français seul).
+Principe clé : **les champs de préséance (`categorie`, `sexe`, `annusNatalis`, `type`) sont indépendants de la langue.** Seul l'affichage (`nom`, `qualite`) est traduisible (`i18n`). Le site est donc prêt pour le multilingue (v1 : français seul).
 
-Autre principe : la **litanie de base n'est jamais re-triée** — elle reste le texte du rituel. On ne fait qu'**insérer** les patrons choisis au bon rang : à l'intérieur d'une catégorie déjà présente (par date de mort), ou, si la catégorie est absente de la litanie courte, à sa place selon le rang des catégories. Joseph reste épinglé en fin des prophètes (`epingleFin`) et « Saint Pierre et saint Paul » couvre les deux apôtres pour la déduplication (`couvre`).
+Autre principe : la **litanie de base n'est jamais re-triée** — elle reste le texte du rituel. On ne fait qu'**insérer** les patrons choisis au bon rang : à l'intérieur d'une catégorie déjà présente (par dies natalis), ou, si la catégorie est absente de la litanie courte, à sa place selon le rang des catégories. Joseph reste épinglé en fin des prophètes (`epingleFin`) et « Saint Pierre et saint Paul » couvre les deux apôtres pour la déduplication (`couvre`).
 
 **Regrouper certains saints** (case optionnelle, décochée par défaut) : l'usage
 de l'Église associe traditionnellement certains saints en une seule invocation

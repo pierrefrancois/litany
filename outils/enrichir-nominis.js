@@ -1,5 +1,5 @@
 // Scraping « d'appoint » de nominis.cef.fr : résout un prénom inconnu de la base
-// locale vers un saint { nom, categorie, sexe, anneeDeces, type }.
+// locale vers un saint { nom, categorie, sexe, annusNatalis, type }.
 //
 // Nominis n'a pas d'API par prénom, mais :
 //   1. POST /  (rechercheType=prenom&rechercheValeur=…)  -> page de résultats
@@ -67,8 +67,8 @@ export function deduireCategorie(libelle) {
   return 'laics'; // vierge/veuve/roi/reine/laïc/enfant…
 }
 
-// Année de décès depuis « (+ 430) », « († v. 430) », « + 430 ».
-export function extraireAnneeDeces(libelle) {
+// Annus natalis depuis « (+ 430) », « († v. 430) », « + 430 ».
+export function extraireAnnusNatalis(libelle) {
   const m = decode(libelle).match(/[+†]\s*(?:v\.?\s*|vers\s*)?(\d{1,4})/i);
   return m ? parseInt(m[1], 10) : null;
 }
@@ -97,7 +97,7 @@ export function parserFichePrenom(html) {
       sexe: honor.sexe,
       type: honor.type,
       categorie: deduireCategorie(descriptif),
-      anneeDeces: extraireAnneeDeces(descriptif),
+      annusNatalis: extraireAnnusNatalis(descriptif),
     });
   }
   return candidats;
@@ -158,7 +158,7 @@ export async function resoudrePrenom(prenom, { fetcher = recuperer } = {}) {
   const cible = normaliser(prenom);
   const principal =
     candidats.find((c) => normaliser(c.nomCourt) === cible && c.type === 'saint') ||
-    candidats.find((c) => c.type === 'saint' && c.anneeDeces !== null) ||
+    candidats.find((c) => c.type === 'saint' && c.annusNatalis !== null) ||
     candidats.find((c) => c.type === 'saint') ||
     candidats[0];
 
@@ -184,7 +184,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   console.error(`# ${r.candidats.length} candidat(s) pour « ${prenom} » — ${r.urlFiche}`);
   const idDe = (nom) => sansAccents(nom).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   for (const c of r.candidats) {
-    const an = c.anneeDeces ?? 'null';
+    const an = c.annusNatalis ?? 'null';
     console.log(`  ['${idDe(c.nomCourt)}', '${c.categorie}', '${c.sexe}', ${an}, '${c.type}', null, null, ${JSON.stringify(c.libelle)}, ${JSON.stringify(c.nom)}, [${JSON.stringify(normaliser(prenom))}]],`);
   }
 }

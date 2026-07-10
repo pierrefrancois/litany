@@ -4,7 +4,7 @@
     "marianne": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -23,7 +23,7 @@
     "guillaume": {
       "categorie": "laics",
       "sexe": "M",
-      "anneeDeces": 1067,
+      "annusNatalis": 1067,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -42,7 +42,7 @@
     "maurice": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 287,
+      "annusNatalis": 287,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -61,7 +61,7 @@
     "alexandre": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 178,
+      "annusNatalis": 178,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -80,7 +80,7 @@
     "benjamin": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -99,7 +99,7 @@
     "adrien": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 309,
+      "annusNatalis": 309,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -118,7 +118,7 @@
     "isabelle-de-france": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 1270,
+      "annusNatalis": 1270,
       "type": "bienheureux",
       "feteJour": null,
       "region": null,
@@ -138,7 +138,7 @@
     "serge": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 304,
+      "annusNatalis": 304,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -157,7 +157,7 @@
     "charlotte": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 1794,
+      "annusNatalis": 1794,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -176,7 +176,7 @@
     "arnaud": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1255,
+      "annusNatalis": 1255,
       "type": "bienheureux",
       "feteJour": null,
       "region": null,
@@ -195,7 +195,7 @@
     "eve-de-dreux": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -215,7 +215,7 @@
     "dorothee": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -234,7 +234,7 @@
     "caius": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 296,
+      "annusNatalis": 296,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -253,7 +253,7 @@
     "jeanne-francoise-de-chantal": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 1641,
+      "annusNatalis": 1641,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -273,7 +273,7 @@
     "etheldrede": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 679,
+      "annusNatalis": 679,
       "type": "saint",
       "feteJour": null,
       "region": null,

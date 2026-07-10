@@ -119,7 +119,7 @@ const server = createServer(async (req, res) => {
     if (corps.categorie) s.categorie = corps.categorie;
     if (corps.sexe) s.sexe = corps.sexe;
     if (corps.type) s.type = corps.type === 'bienheureux' ? 'bienheureux' : 'saint';
-    if ('anneeDeces' in corps) s.anneeDeces = Number.isFinite(corps.anneeDeces) ? corps.anneeDeces : null;
+    if ('annusNatalis' in corps) s.annusNatalis = Number.isFinite(corps.annusNatalis) ? corps.annusNatalis : null;
     await writeFile(LOCAL, JSON.stringify(local, null, 2) + '\n', 'utf-8');
     return json(res, 200, { id, saint: s });
   }

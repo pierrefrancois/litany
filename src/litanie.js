@@ -107,7 +107,7 @@ export function appliquerGroupes(entrees, groupes, opts = {}) {
       invocation: (groupe.i18n[langue] || groupe.i18n.fr).invocation,
       categorie: premier.categorie,
       sexe: premier.sexe,
-      anneeDeces: premier.anneeDeces,
+      annusNatalis: premier.annusNatalis,
       type: 'saint',
       couvre: [...groupe.membres],
       insere,
@@ -169,7 +169,7 @@ function insererUnPatron(entrees, patron, opts) {
   }
 
   // Cas général : première entrée de la section qui DOIT venir après le patron
-  // (hommes avant femmes, puis date de mort).
+  // (hommes avant femmes, puis dies natalis).
   for (const i of indices) {
     if (comparerIntraCategorie(entrees[i], patron) > 0) {
       entrees.splice(i, 0, patron);

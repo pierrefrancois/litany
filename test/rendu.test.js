@@ -20,7 +20,7 @@ test('aucun bandeau de catégorie n\'est répété (Vigile : docteurs scindés)'
 
 test('par défaut, un bienheureux apparaît sous le bandeau de SA catégorie', () => {
   const entrees = entreesBase(CAT);
-  entrees.push({ saintId: 'bx', invocation: 'Bienheureux Frédéric Ozanam', categorie: 'laics', sexe: 'M', anneeDeces: 1853, type: 'bienheureux' });
+  entrees.push({ saintId: 'bx', invocation: 'Bienheureux Frédéric Ozanam', categorie: 'laics', sexe: 'M', annusNatalis: 1853, type: 'bienheureux' });
   const titres = enBlocs(entrees).filter((b) => b.type === 'titre').map((b) => b.texte);
   assert.ok(titres.includes('Laïcs'), titres.join(' | '));
   assert.ok(!titres.some((t) => t.startsWith('Bienheureux')), 'aucun bandeau « Bienheureux » séparé');
@@ -28,7 +28,7 @@ test('par défaut, un bienheureux apparaît sous le bandeau de SA catégorie', (
 
 test('en mode « bienheureux à la fin », un bandeau « Bienheureux — … » apparaît', () => {
   const entrees = entreesBase(CAT);
-  entrees.push({ saintId: 'bx', invocation: 'Bienheureux Frédéric Ozanam', categorie: 'laics', sexe: 'M', anneeDeces: 1853, type: 'bienheureux' });
+  entrees.push({ saintId: 'bx', invocation: 'Bienheureux Frédéric Ozanam', categorie: 'laics', sexe: 'M', annusNatalis: 1853, type: 'bienheureux' });
   const titres = enBlocs(entrees, { bienheureuxALaFin: true }).filter((b) => b.type === 'titre').map((b) => b.texte);
   assert.ok(titres.includes('Bienheureux — Laïcs'), titres.join(' | '));
 });

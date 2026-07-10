@@ -28,7 +28,7 @@ export function saintDepuisCandidat(candidat, prenom) {
     saint: {
       categorie: candidat.categorie,
       sexe: candidat.sexe,
-      anneeDeces: Number.isFinite(candidat.anneeDeces) ? candidat.anneeDeces : null,
+      annusNatalis: Number.isFinite(candidat.annusNatalis) ? candidat.annusNatalis : null,
       type: candidat.type === 'bienheureux' ? 'bienheureux' : 'saint',
       feteJour: null,
       region: null,
@@ -52,7 +52,7 @@ export function fusionnerCatalogue(reference, local) {
 
 // Cherche dans un dictionnaire de saints un saint ÉQUIVALENT au saint donné,
 // c.-à-d. vraisemblablement la même personne enregistrée sous un autre id :
-// même catégorie, même année de mort (connue et identique), et un nom/prénom qui
+// même catégorie, même annus natalis (connu et identique), et un nom/prénom qui
 // se recoupe. Sert à éviter les doublons lors d'un ajout via nominis (ex.
 // « Saint Laurent » †258 déjà présent quand on veut ajouter « Saint Laurent de
 // Rome » †258). Renvoie l'id équivalent trouvé, sinon null.
@@ -67,10 +67,10 @@ export function trouverEquivalent(saints, saint) {
   const prefixeMot = (court, long) => court === long || long.startsWith(court + ' ');
   for (const [id, s] of Object.entries(saints || {})) {
     if (s.categorie !== saint.categorie) continue;
-    const memeAnnee = Number.isFinite(s.anneeDeces)
-      && Number.isFinite(saint.anneeDeces)
-      && s.anneeDeces === saint.anneeDeces;
-    if (!memeAnnee) continue; // sans année commune, signal trop faible : on s'abstient
+    const memeAnnusNatalis = Number.isFinite(s.annusNatalis)
+      && Number.isFinite(saint.annusNatalis)
+      && s.annusNatalis === saint.annusNatalis;
+    if (!memeAnnusNatalis) continue; // sans annus natalis commun, signal trop faible : on s'abstient
     const existants = aliasDe(s);
     const recoupe = [...cibles].some((a) =>
       [...existants].some((b) => prefixeMot(a, b) || prefixeMot(b, a)),

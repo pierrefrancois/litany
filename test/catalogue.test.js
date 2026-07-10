@@ -40,13 +40,13 @@ test('recherche par préfixe partiel', () => {
 });
 
 test('infoSaint expose source/url (pour repérer un saint local corrigeable)', () => {
-  const cat = { saints: { maurice: { categorie: 'martyrs', sexe: 'M', anneeDeces: 287, type: 'saint', source: 'nominis', url: 'http://x', i18n: { fr: { nom: 'Saint Maurice', qualite: '' } } } } };
+  const cat = { saints: { maurice: { categorie: 'martyrs', sexe: 'M', annusNatalis: 287, type: 'saint', source: 'nominis', url: 'http://x', i18n: { fr: { nom: 'Saint Maurice', qualite: '' } } } } };
   const info = infoSaint(cat, 'maurice');
   assert.equal(info.source, 'nominis');
   assert.equal(info.url, 'http://x');
   assert.equal(info.categorie, 'martyrs');
   // un saint de référence (sans source) n'est pas corrigeable
-  const reference = { saints: { x: { categorie: 'laics', sexe: 'M', anneeDeces: 1, type: 'saint', i18n: { fr: { nom: 'X', qualite: '' } } } } };
+  const reference = { saints: { x: { categorie: 'laics', sexe: 'M', annusNatalis: 1, type: 'saint', i18n: { fr: { nom: 'X', qualite: '' } } } } };
   assert.equal(infoSaint(reference, 'x').source, null);
 });
 

@@ -18,7 +18,7 @@ export function infoSaint(catalogue, id, langue = 'fr') {
     qualite: i18n.qualite,
     categorie: s.categorie,
     sexe: s.sexe,
-    anneeDeces: s.anneeDeces,
+    annusNatalis: s.annusNatalis,
     type: s.type,
     feteJour: s.feteJour,
     region: s.region,
@@ -49,7 +49,7 @@ export function entreesBase(catalogue, cleBase = catalogue.baseParDefaut, langue
       invocation: typeof e.invocation === 'string' ? e.invocation : e.invocation[langue] || e.invocation.fr,
       categorie: e.categorie,
       sexe: e.sexe || 'M',
-      anneeDeces: e.anneeDeces ?? null,
+      annusNatalis: e.annusNatalis ?? null,
       type: 'saint',
       fixe: true,
       couvre: e.couvre,
@@ -86,7 +86,7 @@ export function chercherCandidats(catalogue, requete, langue = 'fr') {
 export function descriptionCandidat(saint) {
   const morceaux = [];
   if (saint.qualite) morceaux.push(saint.qualite);
-  if (saint.anneeDeces) morceaux.push(siecle(saint.anneeDeces));
+  if (saint.annusNatalis) morceaux.push(siecle(saint.annusNatalis));
   if (saint.region) morceaux.push(saint.region);
   return morceaux.join(' · ');
 }

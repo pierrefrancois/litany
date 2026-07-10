@@ -1,5 +1,5 @@
 {
-  "_doc": "Catalogue de référence des saints (les ajouts de l'utilisateur vont dans catalogue-local.json). Source principale du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale. groupes = paires canoniques fusionnables en une invocation jointe quand tous leurs membres sont présents (option « regrouper »).",
+  "_doc": "Catalogue de référence des saints (les ajouts de l'utilisateur vont dans catalogue-local.json). Source principale du site. Champs de préséance (categorie/sexe/annusNatalis/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale. groupes = paires canoniques fusionnables en une invocation jointe quand tous leurs membres sont présents (option « regrouper »).",
   "categories": [
     "marie",
     "anges",
@@ -35,7 +35,7 @@
           "invocation": "Saint Pierre et saint Paul",
           "categorie": "apotres",
           "sexe": "M",
-          "anneeDeces": 64,
+          "annusNatalis": 64,
           "couvre": [
             "pierre",
             "paul"
@@ -67,7 +67,7 @@
           "invocation": "Saint Pierre et saint Paul",
           "categorie": "apotres",
           "sexe": "M",
-          "anneeDeces": 64,
+          "annusNatalis": 64,
           "couvre": [
             "pierre",
             "paul"
@@ -95,7 +95,7 @@
           "invocation": "Sainte Perpétue et sainte Félicité",
           "categorie": "martyrs",
           "sexe": "F",
-          "anneeDeces": 203,
+          "annusNatalis": 203,
           "couvre": [
             "perpetue",
             "felicite"
@@ -126,7 +126,7 @@
           "invocation": "Saint François et saint Dominique",
           "categorie": "pretres_religieux",
           "sexe": "M",
-          "anneeDeces": 1221,
+          "annusNatalis": 1221,
           "couvre": [
             "francois-assise",
             "dominique"
@@ -378,7 +378,7 @@
     "marie": {
       "categorie": "marie",
       "sexe": "F",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": "01-01",
       "region": null,
@@ -398,7 +398,7 @@
     "michel": {
       "categorie": "anges",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": "09-29",
       "region": null,
@@ -418,7 +418,7 @@
     "gabriel": {
       "categorie": "anges",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": "09-29",
       "region": null,
@@ -435,7 +435,7 @@
     "raphael": {
       "categorie": "anges",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": "09-29",
       "region": null,
@@ -452,7 +452,7 @@
     "abraham": {
       "categorie": "patriarches_prophetes",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -469,7 +469,7 @@
     "moise": {
       "categorie": "patriarches_prophetes",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -486,7 +486,7 @@
     "elie": {
       "categorie": "patriarches_prophetes",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": null,
       "region": null,
@@ -503,7 +503,7 @@
     "jean-baptiste": {
       "categorie": "patriarches_prophetes",
       "sexe": "M",
-      "anneeDeces": 30,
+      "annusNatalis": 30,
       "type": "saint",
       "feteJour": "06-24",
       "region": null,
@@ -522,7 +522,7 @@
     "joseph": {
       "categorie": "patriarches_prophetes",
       "sexe": "M",
-      "anneeDeces": null,
+      "annusNatalis": null,
       "type": "saint",
       "feteJour": "03-19",
       "region": null,
@@ -540,7 +540,7 @@
     "pierre": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 64,
+      "annusNatalis": 64,
       "type": "saint",
       "feteJour": "06-29",
       "region": null,
@@ -559,7 +559,7 @@
     "paul": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 67,
+      "annusNatalis": 67,
       "type": "saint",
       "feteJour": "06-29",
       "region": null,
@@ -577,7 +577,7 @@
     "andre": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 60,
+      "annusNatalis": 60,
       "type": "saint",
       "feteJour": "11-30",
       "region": null,
@@ -594,7 +594,7 @@
     "jacques-majeur": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 44,
+      "annusNatalis": 44,
       "type": "saint",
       "feteJour": "07-25",
       "region": null,
@@ -612,7 +612,7 @@
     "jean": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 100,
+      "annusNatalis": 100,
       "type": "saint",
       "feteJour": "12-27",
       "region": null,
@@ -629,7 +629,7 @@
     "thomas": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 72,
+      "annusNatalis": 72,
       "type": "saint",
       "feteJour": "07-03",
       "region": null,
@@ -646,7 +646,7 @@
     "jacques-mineur": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 62,
+      "annusNatalis": 62,
       "type": "saint",
       "feteJour": "05-03",
       "region": null,
@@ -663,7 +663,7 @@
     "philippe": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 80,
+      "annusNatalis": 80,
       "type": "saint",
       "feteJour": "05-03",
       "region": null,
@@ -680,7 +680,7 @@
     "barthelemy": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 71,
+      "annusNatalis": 71,
       "type": "saint",
       "feteJour": "08-24",
       "region": null,
@@ -697,7 +697,7 @@
     "matthieu": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 70,
+      "annusNatalis": 70,
       "type": "saint",
       "feteJour": "09-21",
       "region": null,
@@ -715,7 +715,7 @@
     "simon": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 100,
+      "annusNatalis": 100,
       "type": "saint",
       "feteJour": "10-28",
       "region": null,
@@ -732,7 +732,7 @@
     "jude": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 80,
+      "annusNatalis": 80,
       "type": "saint",
       "feteJour": "10-28",
       "region": null,
@@ -750,7 +750,7 @@
     "matthias": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 80,
+      "annusNatalis": 80,
       "type": "saint",
       "feteJour": "05-14",
       "region": null,
@@ -767,7 +767,7 @@
     "barnabe": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 61,
+      "annusNatalis": 61,
       "type": "saint",
       "feteJour": "06-11",
       "region": null,
@@ -784,7 +784,7 @@
     "luc": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 84,
+      "annusNatalis": 84,
       "type": "saint",
       "feteJour": "10-18",
       "region": null,
@@ -802,7 +802,7 @@
     "marc": {
       "categorie": "apotres",
       "sexe": "M",
-      "anneeDeces": 68,
+      "annusNatalis": 68,
       "type": "saint",
       "feteJour": "04-25",
       "region": null,
@@ -820,7 +820,7 @@
     "marie-madeleine": {
       "categorie": "apotres",
       "sexe": "F",
-      "anneeDeces": 70,
+      "annusNatalis": 70,
       "type": "saint",
       "feteJour": "07-22",
       "region": null,
@@ -840,7 +840,7 @@
     "etienne": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 35,
+      "annusNatalis": 35,
       "type": "saint",
       "feteJour": "12-26",
       "region": null,
@@ -859,7 +859,7 @@
     "clement-rome": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 101,
+      "annusNatalis": 101,
       "type": "saint",
       "feteJour": "11-23",
       "region": null,
@@ -876,7 +876,7 @@
     "ignace-antioche": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 107,
+      "annusNatalis": 107,
       "type": "saint",
       "feteJour": "10-17",
       "region": null,
@@ -893,7 +893,7 @@
     "polycarpe": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 155,
+      "annusNatalis": 155,
       "type": "saint",
       "feteJour": "02-23",
       "region": null,
@@ -910,7 +910,7 @@
     "blandine": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 177,
+      "annusNatalis": 177,
       "type": "saint",
       "feteJour": "06-02",
       "region": "Lyon",
@@ -927,7 +927,7 @@
     "perpetue": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 203,
+      "annusNatalis": 203,
       "type": "saint",
       "feteJour": "03-07",
       "region": null,
@@ -944,7 +944,7 @@
     "felicite": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 203,
+      "annusNatalis": 203,
       "type": "saint",
       "feteJour": "03-07",
       "region": null,
@@ -961,7 +961,7 @@
     "cecile": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 230,
+      "annusNatalis": 230,
       "type": "saint",
       "feteJour": "11-22",
       "region": null,
@@ -978,7 +978,7 @@
     "corneille": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 253,
+      "annusNatalis": 253,
       "type": "saint",
       "feteJour": "09-16",
       "region": null,
@@ -995,7 +995,7 @@
     "agathe": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 251,
+      "annusNatalis": 251,
       "type": "saint",
       "feteJour": "02-05",
       "region": null,
@@ -1012,7 +1012,7 @@
     "cyprien": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 258,
+      "annusNatalis": 258,
       "type": "saint",
       "feteJour": "09-16",
       "region": null,
@@ -1029,7 +1029,7 @@
     "laurent": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 258,
+      "annusNatalis": 258,
       "type": "saint",
       "feteJour": "08-10",
       "region": null,
@@ -1047,7 +1047,7 @@
     "come": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 287,
+      "annusNatalis": 287,
       "type": "saint",
       "feteJour": "09-26",
       "region": null,
@@ -1065,7 +1065,7 @@
     "damien": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 287,
+      "annusNatalis": 287,
       "type": "saint",
       "feteJour": "09-26",
       "region": null,
@@ -1082,7 +1082,7 @@
     "sebastien": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 288,
+      "annusNatalis": 288,
       "type": "saint",
       "feteJour": "01-20",
       "region": null,
@@ -1099,7 +1099,7 @@
     "georges": {
       "categorie": "martyrs",
       "sexe": "M",
-      "anneeDeces": 303,
+      "annusNatalis": 303,
       "type": "saint",
       "feteJour": "04-23",
       "region": null,
@@ -1117,7 +1117,7 @@
     "agnes": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 304,
+      "annusNatalis": 304,
       "type": "saint",
       "feteJour": "01-21",
       "region": null,
@@ -1135,7 +1135,7 @@
     "lucie": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 304,
+      "annusNatalis": 304,
       "type": "saint",
       "feteJour": "12-13",
       "region": null,
@@ -1154,7 +1154,7 @@
     "marguerite": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 304,
+      "annusNatalis": 304,
       "type": "saint",
       "feteJour": "07-20",
       "region": null,
@@ -1173,7 +1173,7 @@
     "catherine-alexandrie": {
       "categorie": "martyrs",
       "sexe": "F",
-      "anneeDeces": 305,
+      "annusNatalis": 305,
       "type": "saint",
       "feteJour": "11-25",
       "region": null,
@@ -1192,7 +1192,7 @@
     "nicolas": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 343,
+      "annusNatalis": 343,
       "type": "saint",
       "feteJour": "12-06",
       "region": null,
@@ -1210,7 +1210,7 @@
     "hilaire": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 367,
+      "annusNatalis": 367,
       "type": "saint",
       "feteJour": "01-13",
       "region": null,
@@ -1227,7 +1227,7 @@
     "athanase": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 373,
+      "annusNatalis": 373,
       "type": "saint",
       "feteJour": "05-02",
       "region": null,
@@ -1244,7 +1244,7 @@
     "basile": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 379,
+      "annusNatalis": 379,
       "type": "saint",
       "feteJour": "01-02",
       "region": null,
@@ -1261,7 +1261,7 @@
     "gregoire-naziance": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 390,
+      "annusNatalis": 390,
       "type": "saint",
       "feteJour": "01-02",
       "region": null,
@@ -1278,7 +1278,7 @@
     "martin": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 397,
+      "annusNatalis": 397,
       "type": "saint",
       "feteJour": "11-11",
       "region": "Tours",
@@ -1295,7 +1295,7 @@
     "ambroise": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 397,
+      "annusNatalis": 397,
       "type": "saint",
       "feteJour": "12-07",
       "region": null,
@@ -1312,7 +1312,7 @@
     "jean-chrysostome": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 407,
+      "annusNatalis": 407,
       "type": "saint",
       "feteJour": "09-13",
       "region": null,
@@ -1329,7 +1329,7 @@
     "jerome": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 420,
+      "annusNatalis": 420,
       "type": "saint",
       "feteJour": "09-30",
       "region": null,
@@ -1346,7 +1346,7 @@
     "augustin": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 430,
+      "annusNatalis": 430,
       "type": "saint",
       "feteJour": "08-28",
       "region": null,
@@ -1363,7 +1363,7 @@
     "leon": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 461,
+      "annusNatalis": 461,
       "type": "saint",
       "feteJour": "11-10",
       "region": null,
@@ -1380,7 +1380,7 @@
     "gregoire-grand": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 604,
+      "annusNatalis": 604,
       "type": "saint",
       "feteJour": "09-03",
       "region": null,
@@ -1397,7 +1397,7 @@
     "thomas-aquin": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 1274,
+      "annusNatalis": 1274,
       "type": "saint",
       "feteJour": "01-28",
       "region": null,
@@ -1414,7 +1414,7 @@
     "catherine-sienne": {
       "categorie": "eveques_docteurs",
       "sexe": "F",
-      "anneeDeces": 1380,
+      "annusNatalis": 1380,
       "type": "saint",
       "feteJour": "04-29",
       "region": "Sienne",
@@ -1431,7 +1431,7 @@
     "therese-avila": {
       "categorie": "eveques_docteurs",
       "sexe": "F",
-      "anneeDeces": 1582,
+      "annusNatalis": 1582,
       "type": "saint",
       "feteJour": "10-15",
       "region": "Avila",
@@ -1449,7 +1449,7 @@
     "francois-sales": {
       "categorie": "eveques_docteurs",
       "sexe": "M",
-      "anneeDeces": 1622,
+      "annusNatalis": 1622,
       "type": "saint",
       "feteJour": "01-24",
       "region": null,
@@ -1466,7 +1466,7 @@
     "antoine-ermite": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 356,
+      "annusNatalis": 356,
       "type": "saint",
       "feteJour": "01-17",
       "region": null,
@@ -1483,7 +1483,7 @@
     "benoit": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 547,
+      "annusNatalis": 547,
       "type": "saint",
       "feteJour": "07-11",
       "region": null,
@@ -1501,7 +1501,7 @@
     "bernard": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1153,
+      "annusNatalis": 1153,
       "type": "saint",
       "feteJour": "08-20",
       "region": null,
@@ -1518,7 +1518,7 @@
     "dominique": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1221,
+      "annusNatalis": 1221,
       "type": "saint",
       "feteJour": "08-08",
       "region": null,
@@ -1536,7 +1536,7 @@
     "francois-assise": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1226,
+      "annusNatalis": 1226,
       "type": "saint",
       "feteJour": "10-04",
       "region": "Assise",
@@ -1553,7 +1553,7 @@
     "antoine-padoue": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1231,
+      "annusNatalis": 1231,
       "type": "saint",
       "feteJour": "06-13",
       "region": "Padoue",
@@ -1570,7 +1570,7 @@
     "claire": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 1253,
+      "annusNatalis": 1253,
       "type": "saint",
       "feteJour": "08-11",
       "region": "Assise",
@@ -1588,7 +1588,7 @@
     "francois-xavier": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1552,
+      "annusNatalis": 1552,
       "type": "saint",
       "feteJour": "12-03",
       "region": null,
@@ -1606,7 +1606,7 @@
     "ignace-loyola": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1556,
+      "annusNatalis": 1556,
       "type": "saint",
       "feteJour": "07-31",
       "region": null,
@@ -1623,7 +1623,7 @@
     "camille": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1614,
+      "annusNatalis": 1614,
       "type": "saint",
       "feteJour": "07-14",
       "region": null,
@@ -1640,7 +1640,7 @@
     "vincent-paul": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1660,
+      "annusNatalis": 1660,
       "type": "saint",
       "feteJour": "09-27",
       "region": null,
@@ -1657,7 +1657,7 @@
     "jb-de-la-salle": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1719,
+      "annusNatalis": 1719,
       "type": "saint",
       "feteJour": "04-07",
       "region": null,
@@ -1675,7 +1675,7 @@
     "vianney": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1859,
+      "annusNatalis": 1859,
       "type": "saint",
       "feteJour": "08-04",
       "region": "Ars",
@@ -1693,7 +1693,7 @@
     "bernadette": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 1879,
+      "annusNatalis": 1879,
       "type": "saint",
       "feteJour": "04-16",
       "region": "Lourdes",
@@ -1710,7 +1710,7 @@
     "jean-bosco": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1888,
+      "annusNatalis": 1888,
       "type": "saint",
       "feteJour": "01-31",
       "region": null,
@@ -1728,7 +1728,7 @@
     "therese-lisieux": {
       "categorie": "pretres_religieux",
       "sexe": "F",
-      "anneeDeces": 1897,
+      "annusNatalis": 1897,
       "type": "saint",
       "feteJour": "10-01",
       "region": "Lisieux",
@@ -1745,7 +1745,7 @@
     "charles-foucauld": {
       "categorie": "pretres_religieux",
       "sexe": "M",
-      "anneeDeces": 1916,
+      "annusNatalis": 1916,
       "type": "saint",
       "feteJour": "12-01",
       "region": "Sahara",
@@ -1762,7 +1762,7 @@
     "anne": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 12,
+      "annusNatalis": 12,
       "type": "saint",
       "feteJour": "07-26",
       "region": null,
@@ -1782,7 +1782,7 @@
     "helene": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 330,
+      "annusNatalis": 330,
       "type": "saint",
       "feteJour": "08-18",
       "region": null,
@@ -1800,7 +1800,7 @@
     "monique": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 387,
+      "annusNatalis": 387,
       "type": "saint",
       "feteJour": "08-27",
       "region": null,
@@ -1817,7 +1817,7 @@
     "louis": {
       "categorie": "laics",
       "sexe": "M",
-      "anneeDeces": 1270,
+      "annusNatalis": 1270,
       "type": "saint",
       "feteJour": "08-25",
       "region": "France",
@@ -1835,7 +1835,7 @@
     "elisabeth-hongrie": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 1231,
+      "annusNatalis": 1231,
       "type": "saint",
       "feteJour": "11-17",
       "region": "Hongrie",
@@ -1856,7 +1856,7 @@
     "elisabeth-portugal": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 1336,
+      "annusNatalis": 1336,
       "type": "saint",
       "feteJour": "07-04",
       "region": "Portugal",
@@ -1875,7 +1875,7 @@
     "jeanne-arc": {
       "categorie": "laics",
       "sexe": "F",
-      "anneeDeces": 1431,
+      "annusNatalis": 1431,
       "type": "saint",
       "feteJour": "05-30",
       "region": "France",

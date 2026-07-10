@@ -25,7 +25,7 @@ test('la base par défaut est la litanie courte du baptême des enfants', () => 
 });
 
 test('Joseph reste le dernier des patriarches même si on ajoute un prophète', () => {
-  const elie = { saintId: 'elie-test', invocation: 'Saint Élie', categorie: 'patriarches_prophetes', sexe: 'M', anneeDeces: null, type: 'saint' };
+  const elie = { saintId: 'elie-test', invocation: 'Saint Élie', categorie: 'patriarches_prophetes', sexe: 'M', annusNatalis: null, type: 'saint' };
   const { entrees } = construireLitanie(BASE, [elie]);
   const patr = entrees.filter((e) => e.categorie === 'patriarches_prophetes');
   assert.equal(patr[patr.length - 1].saintId, 'joseph');
@@ -46,7 +46,7 @@ test('un saint de catégorie absente est placé au bon rang de catégorie', () =
   assert.ok(iMarie < iMichel && iMichel < iJB, 'Michel entre Marie et Jean-Baptiste');
 });
 
-test('hommes avant femmes, puis par date de mort, dans une catégorie ajoutée', () => {
+test('hommes avant femmes, puis par dies natalis, dans une catégorie ajoutée', () => {
   const { entrees } = ajouter('laurent', 'sebastien', 'come', 'blandine', 'agnes');
   const m = entrees.filter((e) => e.categorie === 'martyrs').map((e) => e.saintId);
   // hommes par date : Laurent 258, Côme 287, Sébastien 288 ; puis femmes : Blandine 177, Agnès 304
@@ -54,32 +54,32 @@ test('hommes avant femmes, puis par date de mort, dans une catégorie ajoutée',
 });
 
 test('le dies natalis prime (ni naissance ni canonisation) ; saint avant bienheureux', () => {
-  const a = { categorie: 'eveques_docteurs', sexe: 'M', anneeDeces: 400 };
-  const b = { categorie: 'eveques_docteurs', sexe: 'M', anneeDeces: 500 };
+  const a = { categorie: 'eveques_docteurs', sexe: 'M', annusNatalis: 400 };
+  const b = { categorie: 'eveques_docteurs', sexe: 'M', annusNatalis: 500 };
   assert.ok(comparerPreseance(a, b) < 0);
-  const saint = { categorie: 'laics', sexe: 'M', anneeDeces: 1900, type: 'saint' };
-  const bx = { categorie: 'laics', sexe: 'M', anneeDeces: 1900, type: 'bienheureux' };
+  const saint = { categorie: 'laics', sexe: 'M', annusNatalis: 1900, type: 'saint' };
+  const bx = { categorie: 'laics', sexe: 'M', annusNatalis: 1900, type: 'bienheureux' };
   assert.ok(comparerPreseance(saint, bx) < 0);
 });
 
 test('un bienheureux se place « suis locis » : dans sa catégorie, par date (OCM)', () => {
   // Exemple Adoremus/OCM : Bx Miguel Pro (martyr, †1927) va CHEZ LES MARTYRS,
   // donc avant un saint laïc — il n'est PAS rejeté à la fin de la litanie.
-  const miguelPro = { saintId: 'miguel-pro', invocation: 'Bienheureux Miguel Pro', categorie: 'martyrs', sexe: 'M', anneeDeces: 1927, type: 'bienheureux' };
+  const miguelPro = { saintId: 'miguel-pro', invocation: 'Bienheureux Miguel Pro', categorie: 'martyrs', sexe: 'M', annusNatalis: 1927, type: 'bienheureux' };
   const { entrees } = construireLitanie(BASE, [infoSaint(CAT, 'louis'), miguelPro]);
   assert.ok(pos(entrees, 'miguel-pro') < pos(entrees, 'louis'), 'bx martyr (cat. martyrs) avant saint laïc');
 });
 
 test('dans une catégorie, un bienheureux s\'ordonne par date parmi les saints', () => {
   // Bx martyr de 250 vs saints martyrs de la base : il se glisse à sa date.
-  const bxTres = { saintId: 'bx-tres', invocation: 'Bx Ancien', categorie: 'martyrs', sexe: 'M', anneeDeces: 250, type: 'bienheureux' };
+  const bxTres = { saintId: 'bx-tres', invocation: 'Bx Ancien', categorie: 'martyrs', sexe: 'M', annusNatalis: 250, type: 'bienheureux' };
   const { entrees } = construireLitanie(BASE, [infoSaint(CAT, 'laurent'), infoSaint(CAT, 'sebastien'), bxTres]);
   // Laurent †258, Sébastien †288 : le bx de 250 passe avant Laurent.
   assert.ok(pos(entrees, 'bx-tres') < pos(entrees, 'laurent'), 'bx †250 avant Laurent †258');
 });
 
 test('option « bienheureux à la fin » : tous les bienheureux après les saints', () => {
-  const bxMartyr = { saintId: 'bx-m', invocation: 'Bx M', categorie: 'martyrs', sexe: 'M', anneeDeces: 1927, type: 'bienheureux' };
+  const bxMartyr = { saintId: 'bx-m', invocation: 'Bx M', categorie: 'martyrs', sexe: 'M', annusNatalis: 1927, type: 'bienheureux' };
   const { entrees } = construireLitanie(BASE, [infoSaint(CAT, 'louis'), bxMartyr], { bienheureuxALaFin: true });
   assert.ok(pos(entrees, 'louis') < pos(entrees, 'bx-m'), 'saint laïc avant bx martyr (mode à-la-fin)');
   assert.equal(entrees[entrees.length - 1].saintId, 'bx-m', 'le bienheureux clôt la litanie');
@@ -91,7 +91,7 @@ test('déduplication : Jean-Baptiste (en base) et Pierre (couvert par la ligne c
   assert.equal(r.doublons.length, 3);
 });
 
-test('deux Élisabeth ajoutées s\'ordonnent par date de mort', () => {
+test('deux Élisabeth ajoutées s\'ordonnent par dies natalis', () => {
   const { entrees } = ajouter('elisabeth-portugal', 'elisabeth-hongrie');
   assert.ok(pos(entrees, 'elisabeth-hongrie') < pos(entrees, 'elisabeth-portugal'));
 });

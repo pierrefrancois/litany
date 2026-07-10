@@ -3,10 +3,10 @@
 // Deux niveaux :
 //   1. La CATÉGORIE (ordre ci-dessous, de Marie aux laïcs).
 //   2. À l'intérieur d'une catégorie : les HOMMES d'abord (ordre chronologique
-//      de décès — le « dies natalis »), PUIS les FEMMES (même ordre chrono).
+//      du « dies natalis »), PUIS les FEMMES (même ordre chrono).
 //      À catégorie et sexe égaux : un SAINT précède un BIENHEUREUX.
 //
-// Le critère de départage est la DATE DE MORT, pas la naissance ni la
+// Le critère de départage est le DIES NATALIS, pas la naissance ni la
 // canonisation. Exception traditionnelle non automatisable : un fondateur peut
 // précéder son disciple (ex. Ignace de Loyola †1556 avant François Xavier †1552) ;
 // ce cas est géré « en dur » dans l'ordre de la litanie de base, pas par le tri.
@@ -35,7 +35,7 @@ export const LIBELLES_CATEGORIES = {
   laics: 'Laïcs',
 };
 
-// Catégories à ordre figé : on n'y insère pas par date de décès, car ce sont des
+// Catégories à ordre figé : on n'y insère pas par dies natalis, car ce sont des
 // ensembles fermés et ordonnés par la liturgie elle-même (canon de la messe pour
 // les apôtres, etc.). Un patron qui y tombe et qui n'y figure pas est ajouté en
 // fin de catégorie, faute de mieux.
@@ -75,10 +75,10 @@ export function sectionDe(entree, { bienheureuxALaFin = false } = {}) {
 }
 
 // Clé de tri d'un saint À L'INTÉRIEUR de sa catégorie, sous forme de tuple
-// comparable : [sexe (0=H avant 1=F), année de décès, type (0=saint avant 1=bx)].
+// comparable : [sexe (0=H avant 1=F), annus natalis, type (0=saint avant 1=bx)].
 export function cleTriIntraCategorie(saint) {
   const sexe = saint.sexe === 'F' ? 1 : 0;
-  const annee = Number.isFinite(saint.anneeDeces) ? saint.anneeDeces : Infinity;
+  const annee = Number.isFinite(saint.annusNatalis) ? saint.annusNatalis : Infinity;
   const type = saint.type === 'bienheureux' ? 1 : 0;
   return [sexe, annee, type];
 }
@@ -95,8 +95,8 @@ export function comparerIntraCategorie(a, b) {
 }
 
 // Compare deux entrées selon la préséance complète : catégorie, puis dans la
-// catégorie hommes/femmes par date de mort (les bienheureux ajoutés se placent
-// « suis locis », dans leur catégorie, par date — OCM). À catégorie/sexe/date
+// catégorie hommes/femmes par dies natalis (les bienheureux ajoutés se placent
+// « suis locis », dans leur catégorie, par dies natalis — OCM). À catégorie/sexe/date
 // égaux, un saint précède un bienheureux (usage).
 export function comparerPreseance(a, b) {
   const ra = rangCategorie(a.categorie);

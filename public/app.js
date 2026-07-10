@@ -151,7 +151,7 @@ function itemNominis(cand, prenom) {
 
 // ——— Formulaire de relecture / correction ———
 // nominis ne dit pas toujours tout (ex. saint Maurice, martyr, n'a pas « martyr »
-// dans son titre) : la catégorie/le type/le sexe/l'année proposés sont donc
+// dans son titre) : la catégorie/le type/le sexe/l'annus natalis proposés sont donc
 // confirmés ou corrigés ici avant enregistrement.
 
 function optionsCategories(selected) {
@@ -175,7 +175,7 @@ function ouvrirFormulaire({ nom, prefill, labelOk, onConfirm, onDelete }) {
       <option value="M"${prefill.sexe !== 'F' ? ' selected' : ''}>masculin</option>
       <option value="F"${prefill.sexe === 'F' ? ' selected' : ''}>féminin</option>
     </select></label>
-    <label>Décès (année) <input type="number" name="anneeDeces" value="${prefill.anneeDeces ?? ''}" placeholder="ex. 287" /></label>
+    <label>Annus natalis <input type="number" name="annusNatalis" value="${prefill.annusNatalis ?? ''}" placeholder="ex. 287" /></label>
     <div class="ed-boutons">
       <button type="button" class="ed-ok">${labelOk}</button>
       <button type="button" class="ed-annuler">Annuler</button>
@@ -184,8 +184,8 @@ function ouvrirFormulaire({ nom, prefill, labelOk, onConfirm, onDelete }) {
   ul.appendChild(li);
   const champ = (n) => li.querySelector(`[name="${n}"]`).value;
   li.querySelector('.ed-ok').addEventListener('click', () => {
-    const an = parseInt(champ('anneeDeces'), 10);
-    onConfirm({ categorie: champ('categorie'), type: champ('type'), sexe: champ('sexe'), anneeDeces: Number.isFinite(an) ? an : null });
+    const an = parseInt(champ('annusNatalis'), 10);
+    onConfirm({ categorie: champ('categorie'), type: champ('type'), sexe: champ('sexe'), annusNatalis: Number.isFinite(an) ? an : null });
   });
   li.querySelector('.ed-annuler').addEventListener('click', () => afficherCandidats(requeteCourante));
   if (onDelete) li.querySelector('.ed-suppr').addEventListener('click', onDelete);
@@ -197,7 +197,7 @@ function editerPuisAjouter(cand, prenom) {
   ouvrirFormulaire({
     nom: cand.nom,
     labelOk: 'Ajouter',
-    prefill: { categorie: cand.categorie, type: cand.type, sexe: cand.sexe, anneeDeces: cand.anneeDeces },
+    prefill: { categorie: cand.categorie, type: cand.type, sexe: cand.sexe, annusNatalis: cand.annusNatalis },
     onConfirm: async (corr) => {
       let saved;
       try {
@@ -238,7 +238,7 @@ function ouvrirCorrection(c) {
   ouvrirFormulaire({
     nom: c.invocation,
     labelOk: 'Enregistrer',
-    prefill: { categorie: c.categorie, type: c.type, sexe: c.sexe, anneeDeces: c.anneeDeces },
+    prefill: { categorie: c.categorie, type: c.type, sexe: c.sexe, annusNatalis: c.annusNatalis },
     onConfirm: async (corr) => {
       let saved;
       try {
