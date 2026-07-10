@@ -1,5 +1,5 @@
 {
-  "_doc": "Catalogue local des saints. Source unique du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale. groupes = paires canoniques fusionnables en une invocation jointe quand tous leurs membres sont présents (option « regrouper »).",
+  "_doc": "Catalogue de référence des saints (les ajouts de l'utilisateur vont dans catalogue-local.json). Source principale du site. Champs de préséance (categorie/sexe/anneeDeces/type) indépendants de la langue ; affichage dans i18n. bases = litanies de départ proposées (id du catalogue ou invocation fixe ; epingleFin/couvre en options) ; baseParDefaut = clé initiale. groupes = paires canoniques fusionnables en une invocation jointe quand tous leurs membres sont présents (option « regrouper »).",
   "categories": [
     "marie",
     "anges",
