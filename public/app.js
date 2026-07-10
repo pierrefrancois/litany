@@ -328,6 +328,8 @@ function recomposer() {
 function afficherPuces() {
   const box = $('#ajoutes');
   box.innerHTML = '';
+  // Le bouton « Réinitialiser » ne s'affiche que s'il y a des saints à retirer.
+  $('#reinitialiser').hidden = choisis.length === 0;
   if (choisis.length === 0) return;
   const label = document.createElement('span');
   label.className = 'puces-label';
@@ -383,6 +385,15 @@ document.addEventListener('click', (e) => {
 });
 $('#titres').addEventListener('change', recomposer);
 $('#grouper').addEventListener('change', recomposer);
+// Réinitialiser : retire tous les saints ajoutés (le type et les options sont
+// conservés) après confirmation.
+$('#reinitialiser').addEventListener('click', () => {
+  if (choisis.length === 0) return;
+  if (!confirm('Retirer tous les saints ajoutés ? Le type de litanie et les options sont conservés.')) return;
+  choisis.length = 0;
+  recomposer();
+  $('#recherche').focus();
+});
 $('#bxFin').addEventListener('change', () => {
   $('#titres').disabled = $('#bxFin').checked; // « à la fin » force l'absence d'intertitres
   recomposer();
