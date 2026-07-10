@@ -4,8 +4,9 @@
   --encre: #2c2a26;
   --insere: #1b6b3a;
   --bordure: #e3ddcd;
-  --bordeaux: #6e1f2a;
-  --bordeaux-fonce: #591821;
+  --bordeaux: #670303;
+  --bordeaux-fonce: #4d0202;
+  --bordeaux-texte: #edc421;
 }
 * { box-sizing: border-box; }
 body {
@@ -83,7 +84,7 @@ h2 { margin-top: 0; color: var(--or); font-size: 1.25rem; }
 .boutons { display: flex; gap: .75rem; align-items: center; }
 button { font: inherit; cursor: pointer; background: var(--or); color: #fff; border: none; padding: .45rem 1rem; border-radius: 6px; }
 button:hover { background: #715a18; }
-#copier, #imprimer { background: var(--bordeaux); }
+#copier, #imprimer { background: var(--bordeaux); color: var(--bordeaux-texte); }
 #copier:hover, #imprimer:hover { background: var(--bordeaux-fonce); }
 
 /* Litanie */
