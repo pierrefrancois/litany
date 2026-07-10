@@ -38,12 +38,12 @@ Sources : *The Litany of Saints in the Liturgy* (Adoremus Bulletin) ; *Structure
 ## Architecture
 
 ```
-data/catalogue.json        Catalogue curé (généré ; ne pas éditer à la main)
+data/catalogue.json        Catalogue de référence (généré ; ne pas éditer à la main)
 data/catalogue-local.json  Saints ajoutés via le web (écrit par le serveur)
 src/precedence.js          Règles de préséance (catégories + tri par dies natalis)
 src/litanie.js             Insertion d'un patron + déduplication (moteur)
 src/catalogue.js           Résolution des litanies de départ + recherche par prénom
-src/enrichissement.js      Candidat nominis -> entrée de catalogue ; fusion curé+local
+src/enrichissement.js      Candidat nominis -> entrée de catalogue ; fusion référence+local
 src/rendu.js               Mise en forme du texte (« …, priez pour nous »)
 public/                    Le site (index.html, app.js, style.css)
 server.js                  Serveur + API (/api/data, /api/nominis, /api/saints)
@@ -85,12 +85,12 @@ toujours tout (ex. saint Maurice, martyr, n'a pas « martyr » dans son titre).
 **Corriger ou supprimer après coup** : chaque saint ajouté via le web porte un
 crayon **✎** (sur sa pastille dans « Ajoutés », et dans la liste de recherche).
 Il rouvre le formulaire ; le bouton **« Supprimer de la base »** l'enlève du
-catalogue local. Le catalogue curé (`catalogue.json`), lui, n'est jamais modifié.
+catalogue local. Le catalogue de référence (`catalogue.json`), lui, n'est jamais modifié.
 
 nominis n'est appelé que pour cet enrichissement, à votre demande — jamais pour
 composer la litanie.
 
-### En lot (catalogue curé)
+### En lot (catalogue de référence)
 
 Pour étoffer le catalogue de référence : éditez la table de
 `outils/build-catalogue.mjs`, régénérez avec `node outils/build-catalogue.mjs`,

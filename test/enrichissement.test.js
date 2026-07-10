@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { idDepuisNom, qualiteDepuisLibelle, saintDepuisCandidat, fusionnerCatalogue } from '../src/enrichissement.js';
+import { idDepuisNom, qualiteDepuisLibelle, saintDepuisCandidat, fusionnerCatalogue, trouverEquivalent } from '../src/enrichissement.js';
 
 test('idDepuisNom : kebab-case sans honorifique ni accent', () => {
   assert.equal(idDepuisNom('Saint Côme'), 'come');
@@ -34,17 +34,43 @@ test('saintDepuisCandidat : un bienheureux garde son type', () => {
   assert.equal(saint.sexe, 'F');
 });
 
-test('fusionnerCatalogue : les saints curés priment sur les locaux ; bases conservées', () => {
-  const cure = { bases: { x: {} }, saints: { augustin: { categorie: 'eveques_docteurs' } } };
+test('fusionnerCatalogue : les saints de référence priment sur les locaux ; bases conservées', () => {
+  const reference = { bases: { x: {} }, saints: { augustin: { categorie: 'eveques_docteurs' } } };
   const local = { saints: { augustin: { categorie: 'AUTRE' }, 'maximilien-kolbe': { categorie: 'martyrs' } } };
-  const m = fusionnerCatalogue(cure, local);
-  assert.equal(m.saints.augustin.categorie, 'eveques_docteurs', 'le curé prime');
+  const m = fusionnerCatalogue(reference, local);
+  assert.equal(m.saints.augustin.categorie, 'eveques_docteurs', 'la référence prime');
   assert.ok(m.saints['maximilien-kolbe'], 'le local ajouté est présent');
   assert.deepEqual(m.bases, { x: {} });
 });
 
 test('fusionnerCatalogue tolère une extension locale vide ou absente', () => {
-  const cure = { saints: { a: {} } };
-  assert.deepEqual(fusionnerCatalogue(cure, null).saints, { a: {} });
-  assert.deepEqual(fusionnerCatalogue(cure, { saints: {} }).saints, { a: {} });
+  const reference = { saints: { a: {} } };
+  assert.deepEqual(fusionnerCatalogue(reference, null).saints, { a: {} });
+  assert.deepEqual(fusionnerCatalogue(reference, { saints: {} }).saints, { a: {} });
+});
+
+test('trouverEquivalent : détecte le même saint sous un autre id (même cat./année, nom recoupé)', () => {
+  // Le cas réel : « Saint Laurent » †258 déjà en base, ajout de « Saint Laurent de Rome » †258.
+  const reference = { laurent: { categorie: 'martyrs', anneeDeces: 258, prenoms: ['laurent', 'lorenzo'], i18n: { fr: { nom: 'Saint Laurent' } } } };
+  const nouveau = { categorie: 'martyrs', anneeDeces: 258, prenoms: ['laurent', 'laurent de rome'], i18n: { fr: { nom: 'Saint Laurent de Rome' } } };
+  assert.equal(trouverEquivalent(reference, nouveau), 'laurent');
+});
+
+test('trouverEquivalent : catégorie ou année différente => pas d\'équivalent', () => {
+  const reference = { laurent: { categorie: 'martyrs', anneeDeces: 258, prenoms: ['laurent'], i18n: { fr: { nom: 'Saint Laurent' } } } };
+  assert.equal(trouverEquivalent(reference, { categorie: 'martyrs', anneeDeces: 999, prenoms: ['laurent'], i18n: { fr: { nom: 'Saint Laurent' } } }), null);
+  assert.equal(trouverEquivalent(reference, { categorie: 'laics', anneeDeces: 258, prenoms: ['laurent'], i18n: { fr: { nom: 'Saint Laurent' } } }), null);
+});
+
+test('trouverEquivalent : noms distincts de même catégorie/année => pas d\'équivalent (pas de faux positif)', () => {
+  const reference = { laurent: { categorie: 'martyrs', anneeDeces: 258, prenoms: ['laurent'], i18n: { fr: { nom: 'Saint Laurent' } } } };
+  // Cyprien †258 est aussi un martyr, mais ce n'est pas le même saint.
+  assert.equal(trouverEquivalent(reference, { categorie: 'martyrs', anneeDeces: 258, prenoms: ['cyprien'], i18n: { fr: { nom: 'Saint Cyprien' } } }), null);
+  // « Laurentine » ne doit pas être confondue avec « Laurent » (préfixe-mot, pas sous-chaîne).
+  assert.equal(trouverEquivalent(reference, { categorie: 'martyrs', anneeDeces: 258, prenoms: ['laurentine'], i18n: { fr: { nom: 'Sainte Laurentine' } } }), null);
+});
+
+test('trouverEquivalent : sans année de mort connue, on s\'abstient (signal trop faible)', () => {
+  const reference = { x: { categorie: 'laics', anneeDeces: null, prenoms: ['jean'], i18n: { fr: { nom: 'Saint Jean' } } } };
+  assert.equal(trouverEquivalent(reference, { categorie: 'laics', anneeDeces: null, prenoms: ['jean'], i18n: { fr: { nom: 'Saint Jean' } } }), null);
 });

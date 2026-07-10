@@ -1,5 +1,5 @@
 // Serveur du site + API d'enrichissement.
-//   GET  /api/data            -> catalogue curé fusionné avec l'extension locale
+//   GET  /api/data            -> catalogue de référence fusionné avec l'extension locale
 //   GET  /api/nominis?prenom= -> candidats saints/bienheureux trouvés sur nominis
 //   POST /api/saints          -> enregistre un saint choisi dans catalogue-local
 // Le reste est servi en statique (public/, src/, data/).
@@ -11,7 +11,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
 import { resoudrePrenom } from './outils/enrichir-nominis.js';
-import { saintDepuisCandidat, fusionnerCatalogue } from './src/enrichissement.js';
+import { saintDepuisCandidat, fusionnerCatalogue, trouverEquivalent } from './src/enrichissement.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3000;
@@ -57,11 +57,11 @@ async function servirStatique(res, pathname) {
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
 
-  // Catalogue fusionné (curé + local)
+  // Catalogue fusionné (référence + local)
   if (url.pathname === '/api/data') {
-    const cure = await lireJson(CATALOGUE, { saints: {}, bases: {} });
+    const reference = await lireJson(CATALOGUE, { saints: {}, bases: {} });
     const local = await lireJson(LOCAL, { saints: {} });
-    return json(res, 200, fusionnerCatalogue(cure, local));
+    return json(res, 200, fusionnerCatalogue(reference, local));
   }
 
   // Recherche nominis (saints et bienheureux uniquement)
@@ -86,11 +86,20 @@ const server = createServer(async (req, res) => {
     if (!candidat || !candidat.nom || !candidat.categorie) return json(res, 400, { erreur: 'candidat incomplet' });
 
     const { id, saint } = saintDepuisCandidat(candidat, prenom || '');
-    const cure = await lireJson(CATALOGUE, { saints: {} });
-    if (cure.saints[id]) return json(res, 200, { id, saint: cure.saints[id], deja: true, source: 'cure' });
-
+    const reference = await lireJson(CATALOGUE, { saints: {} });
     const local = await lireJson(LOCAL, { saints: {} });
+
+    // Collision d'identifiant : le saint existe déjà tel quel.
+    if (reference.saints[id]) return json(res, 200, { id, saint: reference.saints[id], deja: true, source: 'reference' });
     if (local.saints[id]) return json(res, 200, { id, saint: local.saints[id], deja: true, source: 'local' });
+
+    // Équivalence : le même saint sous un autre id (même catégorie/année/nom).
+    // On renvoie l'existant plutôt que de créer un doublon (ex. « Saint Laurent »
+    // vs « Saint Laurent de Rome », †258).
+    const idRef = trouverEquivalent(reference.saints, saint);
+    if (idRef) return json(res, 200, { id: idRef, saint: reference.saints[idRef], deja: true, equivalent: true, source: 'reference' });
+    const idLoc = trouverEquivalent(local.saints, saint);
+    if (idLoc) return json(res, 200, { id: idLoc, saint: local.saints[idLoc], deja: true, equivalent: true, source: 'local' });
 
     local.saints[id] = saint;
     await writeFile(LOCAL, JSON.stringify(local, null, 2) + '\n', 'utf-8');
@@ -103,7 +112,7 @@ const server = createServer(async (req, res) => {
     try { corps = await lireCorps(req); } catch { return json(res, 400, { erreur: 'corps JSON invalide' }); }
     const { id } = corps;
     const local = await lireJson(LOCAL, { saints: {} });
-    if (!id || !local.saints[id]) return json(res, 404, { erreur: 'saint local introuvable (le catalogue curé n’est pas modifiable)' });
+    if (!id || !local.saints[id]) return json(res, 404, { erreur: 'saint local introuvable (le catalogue de référence n’est pas modifiable)' });
     const s = local.saints[id];
     if (corps.categorie) s.categorie = corps.categorie;
     if (corps.sexe) s.sexe = corps.sexe;
@@ -119,7 +128,7 @@ const server = createServer(async (req, res) => {
     try { corps = await lireCorps(req); } catch { return json(res, 400, { erreur: 'corps JSON invalide' }); }
     const id = corps.id || url.searchParams.get('id');
     const local = await lireJson(LOCAL, { saints: {} });
-    if (!id || !local.saints[id]) return json(res, 404, { erreur: 'saint local introuvable (le catalogue curé n’est pas modifiable)' });
+    if (!id || !local.saints[id]) return json(res, 404, { erreur: 'saint local introuvable (le catalogue de référence n’est pas modifiable)' });
     delete local.saints[id];
     await writeFile(LOCAL, JSON.stringify(local, null, 2) + '\n', 'utf-8');
     return json(res, 200, { id, supprime: true });

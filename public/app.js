@@ -213,10 +213,24 @@ function editerPuisAjouter(cand, prenom) {
       }
       catalogue.saints[saved.id] = saved.saint;
       const info = infoSaint(catalogue, saved.id, LANGUE);
+      // Doublon évité côté serveur : ce candidat correspond à un saint déjà
+      // connu sous un autre nom — c'est celui-ci qui est retenu.
+      if (saved.equivalent) {
+        signaler(`« ${cand.nom} » correspond au saint déjà connu « ${saved.saint.i18n.fr.nom} » : c'est celui-ci qui a été ajouté.`);
+      }
       if (estPresent(saved.id)) { fermerRecherche(); recomposer(); return; }
       choisir(info);
     },
   });
+}
+
+// Affiche un court message informatif sous la zone d'ajout (auto-effacé).
+function signaler(message) {
+  const el = $('#message');
+  el.textContent = message;
+  el.hidden = false;
+  clearTimeout(signaler._t);
+  signaler._t = setTimeout(() => { el.hidden = true; }, 6000);
 }
 
 // Correction (et suppression) d'un saint enregistré localement.

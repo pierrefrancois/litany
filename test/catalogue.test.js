@@ -45,9 +45,9 @@ test('infoSaint expose source/url (pour repérer un saint local corrigeable)', (
   assert.equal(info.source, 'nominis');
   assert.equal(info.url, 'http://x');
   assert.equal(info.categorie, 'martyrs');
-  // un saint curé (sans source) n'est pas corrigeable
-  const cure = { saints: { x: { categorie: 'laics', sexe: 'M', anneeDeces: 1, type: 'saint', i18n: { fr: { nom: 'X', qualite: '' } } } } };
-  assert.equal(infoSaint(cure, 'x').source, null);
+  // un saint de référence (sans source) n'est pas corrigeable
+  const reference = { saints: { x: { categorie: 'laics', sexe: 'M', anneeDeces: 1, type: 'saint', i18n: { fr: { nom: 'X', qualite: '' } } } } };
+  assert.equal(infoSaint(reference, 'x').source, null);
 });
 
 test('description de désambiguïsation et siècle', () => {

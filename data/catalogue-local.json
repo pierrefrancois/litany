@@ -173,26 +173,6 @@
       "source": "nominis",
       "url": "https://nominis.cef.fr/contenus/saint/1522/Sainte-Charlotte.html"
     },
-    "laurent-de-rome": {
-      "categorie": "martyrs",
-      "sexe": "M",
-      "anneeDeces": 258,
-      "type": "saint",
-      "feteJour": null,
-      "region": null,
-      "prenoms": [
-        "laurent",
-        "laurent de rome"
-      ],
-      "i18n": {
-        "fr": {
-          "nom": "Saint Laurent de Rome",
-          "qualite": "Diacre et martyr à Rome"
-        }
-      },
-      "source": "nominis",
-      "url": "https://nominis.cef.fr/contenus/saint/1652/Saint-Laurent-de-Rome.html"
-    },
     "arnaud": {
       "categorie": "pretres_religieux",
       "sexe": "M",

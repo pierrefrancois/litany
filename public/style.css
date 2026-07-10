@@ -66,6 +66,9 @@ h2 { margin-top: 0; color: var(--or); font-size: 1.25rem; }
 .puce button { border: none; background: none; cursor: pointer; color: #9a3a1a; font-size: 1.1rem; line-height: 1; padding: 0 .25rem; }
 .puce .p-corriger { color: var(--or); font-size: .9rem; }
 
+/* Message d'information (ex. saint déjà connu sous un autre nom) */
+.message { margin: .7rem 0 0; padding: .5rem .7rem; background: #f8f4e8; border: 1px solid var(--or); border-radius: 6px; color: #4a463d; font-size: .9rem; }
+
 /* Barre résultat */
 .barre { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .boutons { display: flex; gap: .75rem; align-items: center; }

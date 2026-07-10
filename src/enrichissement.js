@@ -1,6 +1,6 @@
 // Fonctions pures de l'enrichissement du catalogue depuis nominis.
 // Convertissent un candidat nominis en entrée de catalogue, et fusionnent le
-// catalogue curé avec les saints ajoutés par l'utilisateur (catalogue-local).
+// catalogue de référence avec les saints ajoutés par l'utilisateur (catalogue-local).
 
 import { normaliser } from './litanie.js';
 
@@ -40,12 +40,42 @@ export function saintDepuisCandidat(candidat, prenom) {
   };
 }
 
-// Fusionne le catalogue curé et l'extension locale (saints ajoutés via le web).
-// Les saints locaux ne masquent jamais un id déjà curé.
-export function fusionnerCatalogue(cure, local) {
+// Fusionne le catalogue de référence et l'extension locale (saints ajoutés via
+// le web). Les saints locaux ne masquent jamais un id déjà présent en référence.
+export function fusionnerCatalogue(reference, local) {
   const saintsLocaux = (local && local.saints) || {};
   return {
-    ...cure,
-    saints: { ...saintsLocaux, ...cure.saints },
+    ...reference,
+    saints: { ...saintsLocaux, ...reference.saints },
   };
+}
+
+// Cherche dans un dictionnaire de saints un saint ÉQUIVALENT au saint donné,
+// c.-à-d. vraisemblablement la même personne enregistrée sous un autre id :
+// même catégorie, même année de mort (connue et identique), et un nom/prénom qui
+// se recoupe. Sert à éviter les doublons lors d'un ajout via nominis (ex.
+// « Saint Laurent » †258 déjà présent quand on veut ajouter « Saint Laurent de
+// Rome » †258). Renvoie l'id équivalent trouvé, sinon null.
+export function trouverEquivalent(saints, saint) {
+  const aliasDe = (s) => new Set(
+    [...(s.prenoms || []).map(normaliser), normaliser(s.i18n?.fr?.nom)].filter(Boolean),
+  );
+  const cibles = aliasDe(saint);
+  // « laurent » est un préfixe-MOT de « laurent de rome », mais pas de
+  // « laurentine » : on exige la fin de chaîne ou une espace, pas une simple
+  // sous-chaîne, pour éviter les faux positifs.
+  const prefixeMot = (court, long) => court === long || long.startsWith(court + ' ');
+  for (const [id, s] of Object.entries(saints || {})) {
+    if (s.categorie !== saint.categorie) continue;
+    const memeAnnee = Number.isFinite(s.anneeDeces)
+      && Number.isFinite(saint.anneeDeces)
+      && s.anneeDeces === saint.anneeDeces;
+    if (!memeAnnee) continue; // sans année commune, signal trop faible : on s'abstient
+    const existants = aliasDe(s);
+    const recoupe = [...cibles].some((a) =>
+      [...existants].some((b) => prefixeMot(a, b) || prefixeMot(b, a)),
+    );
+    if (recoupe) return id;
+  }
+  return null;
 }
